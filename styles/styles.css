@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "Brandon Grotesque Black";
+  src: url("/fonts/brandongrotesque-black-webfont.woff2") format("woff2"),
+    url("/fonts/brandongrotesque-black-webfont.woff") format("woff");
+  font-style: normal;
+  font-weight: bolder;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Lulo Clean Bold";
+  src: url("/fonts/fontsfree-net-lulo-clean-w01-one-bold-webfont.woff2")
+      format("woff2"),
+    url("/fonts/fontsfree-net-lulo-clean-w01-one-bold-webfont.woff")
+      format("woff");
+  font-style: normal;
+  font-weight: bold;
+  font-display: fallback;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  cursor: default;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+}
