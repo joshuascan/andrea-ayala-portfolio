@@ -49,12 +49,12 @@ const HeaderTop = styled.div`
 const HeaderBottom = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 1205px;
+  width: 1200px;
   margin-right: 2.8rem;
 `;
 
 const SubHeader = styled.h2`
-  font-family: ${({ theme }) => theme.fonts.poppins};
+  font-family: ${({ theme }) => theme.fonts.futuraBook};
   font-size: 1.8rem;
   letter-spacing: 0.1rem;
   color: white;

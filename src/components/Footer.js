@@ -9,7 +9,7 @@ const FooterContainer = styled.footer`
 const FooterText = styled.p`
   color: white;
   text-align: center;
-  font-family: ${({ theme }) => theme.fonts.poppins};
+  font-family: ${({ theme }) => theme.fonts.futuraLight};
   font-weight: 400;
   font-size: 1.4rem;
 `;

@@ -11,7 +11,7 @@ const HeaderContainer = styled.header`
 
 const TextContainer = styled.div`
   margin: 0 auto;
-  padding-right: 9rem;
+  padding-right: 6rem;
   text-align: right;
   width: 47rem;
 `;
@@ -26,13 +26,12 @@ const Name = styled.a`
 `;
 
 const Title = styled.p`
-  font-family: ${({ theme }) => theme.fonts.poppins};
+  font-family: ${({ theme }) => theme.fonts.futuraBook};
   font-size: 1.1rem;
   color: ${({ theme }) => theme.colors.gray};
-  font-weight: 400;
   letter-spacing: 0.22rem;
-  margin-top: 0.5rem;
-  margin-right: -0.3rem;
+  margin-top: 0.7rem;
+  margin-right: -0.4rem;
 `;
 
 const NavContainer = styled.nav`
@@ -47,7 +46,7 @@ const NavLink = styled.a`
   font-family: ${({ theme }) => theme.fonts.luloBold};
   font-size: 1.2rem;
   letter-spacing: 0;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   transition: color 0.3s ease-in-out;
 
   :hover {
@@ -61,7 +60,9 @@ export default function Header() {
   return (
     <HeaderContainer>
       <TextContainer>
-        <Name>ANDREA WILSON</Name>
+        <Link href="/" passHref>
+          <Name>ANDREA WILSON</Name>
+        </Link>
         <Title>PRODUCTION ARTIST / GRAPHIC DESIGNER</Title>
       </TextContainer>
       <NavContainer>
