@@ -1,7 +1,8 @@
 const theme = {
   fonts: {
-    brandonBlack: "Brandon Grotesque Black",
-    luloBold: "Lulo Clean Bold",
+    brandonBlack: "Brandon Grotesque Black, sans serif",
+    luloBold: "Lulo Clean Bold, sans serif",
+    poppins: "Poppins, sans serif",
   },
   colors: {
     pink: "#f05380",

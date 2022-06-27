@@ -1,5 +1,84 @@
 import Head from "next/head";
+import Link from "next/link";
 import styled from "styled-components";
+
+const HomeContainer = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 1274px;
+`;
+
+const HomeContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 12rem;
+  margin-right: 7rem;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  height: 1073px;
+`;
+
+const HeroText = styled.h1`
+  font-size: 9.6rem;
+  font-family: ${({ theme }) => theme.fonts.luloBold};
+  color: ${({ theme }) => theme.colors.pink};
+  text-align: right;
+  line-height: 1.5;
+`;
+
+const WhiteText = styled.span`
+  color: white;
+`;
+
+const PinkRectangle = styled.div`
+  height: 1073px;
+  width: 1181px;
+  background-color: ${({ theme }) => theme.colors.pink};
+  position: absolute;
+  left: -350px;
+  z-index: -1;
+`;
+
+const HeaderTop = styled.div`
+  margin-top: 12rem;
+  margin-bottom: -7.5rem;
+`;
+
+const HeaderBottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 1205px;
+  margin-right: 2.8rem;
+`;
+
+const SubHeader = styled.h2`
+  font-family: ${({ theme }) => theme.fonts.poppins};
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  color: white;
+  font-weight: 400;
+`;
+
+const LinkContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+`;
+
+const NavLink = styled.a`
+  color: ${({ theme }) => theme.colors.gray};
+  text-align: right;
+  font-family: ${({ theme }) => theme.fonts.luloBold};
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1.8rem;
+
+  :hover {
+    color: ${({ theme }) => theme.colors.pink};
+  }
+`;
 
 export default function Home() {
   return (
@@ -10,9 +89,41 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>Home Page</h1>
-      </main>
+      <HomeContainer>
+        <HomeContent>
+          <PinkRectangle />
+          <HeaderTop>
+            <HeroText>
+              <WhiteText>HELLO, MY</WhiteText> NAME IS
+              <br />
+              <WhiteText>ANDREA</WhiteText> WILSON
+            </HeroText>
+          </HeaderTop>
+          <HeaderBottom>
+            <SubHeader>PRODUCTION ARTIST / GRAPHIC DESIGNER</SubHeader>
+            <LinkContainer>
+              <Link href="#" passHref>
+                <NavLink>HOME</NavLink>
+              </Link>
+              <Link href="#" passHref>
+                <NavLink>PRODUCTION ART</NavLink>
+              </Link>
+              <Link href="#" passHref>
+                <NavLink>TATCHA</NavLink>
+              </Link>
+              <Link href="#" passHref>
+                <NavLink>GRAPHIC DESIGN</NavLink>
+              </Link>
+              <Link href="#" passHref>
+                <NavLink>FINE ART</NavLink>
+              </Link>
+              <Link href="#" passHref>
+                <NavLink>RESUME</NavLink>
+              </Link>
+            </LinkContainer>
+          </HeaderBottom>
+        </HomeContent>
+      </HomeContainer>
     </div>
   );
 }
