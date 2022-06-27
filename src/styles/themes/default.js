@@ -4,6 +4,7 @@ const theme = {
     luloBold: "Lulo Clean Bold, sans serif",
     futuraBook: "Futura Book, sans serif",
     futuraLight: "Futura Light, sans serif",
+    montserrat: "Montserrat, sans serif",
   },
   colors: {
     pink: "#f05380",

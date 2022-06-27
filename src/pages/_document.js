@@ -61,7 +61,7 @@ class MyDocument extends Document {
             crossOrigin=""
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway:wght@700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Raleway:wght@700&display=swap"
             rel="stylesheet"
           />
         </Head>
