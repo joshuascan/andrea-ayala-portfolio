@@ -61,7 +61,7 @@ const SubHeader = styled.h2`
   font-weight: 400;
 `;
 
-const LinkContainer = styled.div`
+const LinkContainer = styled.nav`
   display: flex;
   flex-direction: column;
   margin-top: 1rem;

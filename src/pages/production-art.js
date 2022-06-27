@@ -1,3 +1,9 @@
+import Layout from "../components/Layout";
+
 export default function ProductionArt() {
-  return <h1>Production Art</h1>;
+  return (
+    <Layout>
+      <h1>Production Art</h1>
+    </Layout>
+  );
 }
