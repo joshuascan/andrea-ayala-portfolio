@@ -102,23 +102,25 @@ export default function Home() {
           <HeaderBottom>
             <SubHeader>PRODUCTION ARTIST / GRAPHIC DESIGNER</SubHeader>
             <LinkContainer>
-              <Link href="#" passHref>
+              <Link href="/" passHref>
                 <NavLink>HOME</NavLink>
               </Link>
-              <Link href="#" passHref>
+              <Link href="/production-art" passHref>
                 <NavLink>PRODUCTION ART</NavLink>
               </Link>
-              <Link href="#" passHref>
+              <Link href="/tatcha" passHref>
                 <NavLink>TATCHA</NavLink>
               </Link>
-              <Link href="#" passHref>
+              <Link href="/graphic-design" passHref>
                 <NavLink>GRAPHIC DESIGN</NavLink>
               </Link>
-              <Link href="#" passHref>
+              <Link href="/fine-art" passHref>
                 <NavLink>FINE ART</NavLink>
               </Link>
-              <Link href="#" passHref>
-                <NavLink>RESUME</NavLink>
+              <Link href="/images/andrea-wilson-resume.pdf" passHref>
+                <NavLink target="_blank" rel="noreferrer noopener">
+                  RESUME
+                </NavLink>
               </Link>
             </LinkContainer>
           </HeaderBottom>
