@@ -10,10 +10,8 @@ const HeaderContainer = styled.header`
 `;
 
 const TextContainer = styled.div`
-  margin: 0 auto;
-  padding-right: 6rem;
   text-align: right;
-  width: 47rem;
+  width: 49.5rem;
 `;
 
 const Name = styled.a`
@@ -36,6 +34,7 @@ const Title = styled.p`
 
 const NavContainer = styled.nav`
   display: flex;
+  padding-right: 3rem;
 `;
 
 const NavLink = styled.a`
