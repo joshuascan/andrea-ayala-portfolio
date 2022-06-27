@@ -1,1 +1,90 @@
-export const productionArt = [];
+export const productionArt = [
+  {
+    title: "Oakville Grocery",
+    description:
+      "Oakville Grocery / Blue Cheese Stuffed Olives / Gold Foil, pantone color match",
+    image: "/images/production-art/Oakville.png",
+    id: 0,
+  },
+  {
+    title: "Quixote 2018 Cabernet Sauvignon",
+    description:
+      "Quixote Cabernet Sauvignon 2018 / Vintage update, three different types of gold foil used",
+    image: "/images/production-art/Quixote.png",
+    id: 1,
+  },
+  {
+    title: "Municipal Wines 2015 Bright White Dry Riesling",
+    description:
+      "Municipal Wines / Bright White Dry Riesling 2015 / Vintage Update",
+    image: "/images/production-art/Bright-White.png",
+    id: 2,
+  },
+  {
+    title: "Marioni Wines 2019 Pinot Noir",
+    description:
+      "Marioni Wines / 2019 Pinot Noir / Vintage update, back text update & layout, match to kraft paper",
+    image: "/images/production-art/Marioni.png",
+    id: 3,
+  },
+  {
+    title: "Alara Cellars 2016 Rose",
+    description:
+      "Alara Cellars / 2016 Rose / Emboss, spot gloss uv, pantone color match",
+    image: "/images/production-art/Alara-Cellars.png",
+    id: 4,
+  },
+  {
+    title: "Trader Joe's Party Cake",
+    description:
+      "Trader Joe's / Party Cake / Nutrition facts update, flexo printing, pantone color match",
+    image: "/images/production-art/Trader-Joes.png",
+    id: 5,
+  },
+  {
+    title: "Municipal Wines Sparkling Shirazz",
+    description: "Municipal Wines / Sparkling Shirazz / Gold Foil",
+    image: "/images/production-art/Fizz.png",
+    id: 6,
+  },
+  {
+    title: "Municipal Wines 2020 Chardonnay",
+    description:
+      "Municipal Wines / Is What It Is 2020 / Vintage update, pantone color match",
+    image: "/images/production-art/Is-What-It-Is.png",
+    id: 7,
+  },
+  {
+    title: "Municipal Wines 2016 Potek",
+    description: "Municipal Wines / Potek 2016 / Emboss, vintage update",
+    image: "/images/production-art/Potek.png",
+    id: 8,
+  },
+  {
+    title: "D&F Wines 2018 Stardust",
+    description: "D&F Wines / Stardust 2018 / Vintage update, gold foil",
+    image: "/images/production-art/Stardust.png",
+    id: 9,
+  },
+  {
+    title: "Municipal Wines 2016 Debra Blush Wine",
+    description:
+      "Municipal Wines / Debra Blush Wine 2016 / Emboss, vintage update",
+    image: "/images/production-art/Debra.png",
+    id: 10,
+  },
+  {
+    title: "Municipal Wines 2020 Mubbly",
+    description:
+      "Municipal Wines / Mubbly 2020 / Vintage update, pantone color match",
+    image: "/images/production-art/Mubbly.png",
+    id: 11,
+  },
+  {
+    title: "Oliver Napa Valley Toasted Garlic Olive Oil",
+    description:
+      "Oliver Napa Valley / Toasted Garlic Olive Oil / Nutrition facts changes, pantone color match",
+    image: "/images/production-art/Olivier-Garlic.png",
+    id: 12,
+  },
+];
