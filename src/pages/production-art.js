@@ -53,7 +53,8 @@ export default function ProductionArt() {
                     style={{ height: "22rem", width: "auto" }}
                     src={image}
                     alt={title}
-                    sizes="33vw"
+                    sizes="25vw"
+                    priority
                   />
                 </ImageContainer>
               );
