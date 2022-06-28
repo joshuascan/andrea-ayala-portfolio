@@ -22,11 +22,6 @@ const ImageContainer = styled.div`
   display: flex;
 `;
 
-const Img = styled(Image)`
-  height: 22rem;
-  width: auto;
-`;
-
 export default function ProductionArt() {
   return (
     <Layout>
@@ -46,7 +41,12 @@ export default function ProductionArt() {
           {productionArt.map(({ title, description, image, id }) => {
             return (
               <ImageContainer key={id}>
-                <Img src={image} alt={title} layout="fill" sizes="22rem" />
+                <Image
+                  style={{ height: "22rem", width: "auto" }}
+                  src={image}
+                  alt={title}
+                  sizes="33vw"
+                />
               </ImageContainer>
             );
           })}
