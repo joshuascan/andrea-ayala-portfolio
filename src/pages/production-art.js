@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Image from "next/image";
+import Image from "next/future/image";
 import Layout from "../components/Layout";
 import {
   Section,
@@ -13,20 +13,18 @@ const ArtContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid red;
   width: 125rem;
+  margin: 5rem 0;
 `;
 
 const ImageContainer = styled.div`
-  width: 43rem;
-  height: 22rem;
-  position: relative;
-  border: 1px solid red;
+  padding: 2rem;
+  display: flex;
 `;
 
 const Img = styled(Image)`
-  object-fit: contain;
-  overflow: hidden;
+  height: 22rem;
+  width: auto;
 `;
 
 export default function ProductionArt() {
@@ -48,12 +46,7 @@ export default function ProductionArt() {
           {productionArt.map(({ title, description, image, id }) => {
             return (
               <ImageContainer key={id}>
-                <Img
-                  src={image}
-                  alt={title}
-                  layout="fill"
-                  objectFit="contain"
-                />
+                <Img src={image} alt={title} layout="fill" sizes="22rem" />
               </ImageContainer>
             );
           })}
