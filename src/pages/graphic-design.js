@@ -29,13 +29,16 @@ const ImageContainer = styled.div`
   margin: 3rem 0 7rem 0;
 `;
 
+const Img = styled(Image)`
+  cursor: pointer;
+`;
+
 export default function GraphicDesign() {
   const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState({ image: "", description: "" });
 
   const openModal = (imageData) => {
     setData(imageData);
-    console.log(data);
     setIsOpen(true);
   };
 
@@ -64,7 +67,7 @@ export default function GraphicDesign() {
             {editorialProjects.map(({ title, description, image, id }) => {
               return (
                 <EditorialImageContainer key={id}>
-                  <Image
+                  <Img
                     src={image}
                     alt={title}
                     width={901}
@@ -88,11 +91,12 @@ export default function GraphicDesign() {
             easier for their kids to take their vitamins.
           </SectionText>
           <ImageContainer>
-            <Image
+            <Img
               src={superkids.image}
               alt={superkids.title}
               width={929}
               height={648}
+              onClick={() => openModal(superkids)}
             />
           </ImageContainer>
         </Section>
@@ -107,11 +111,12 @@ export default function GraphicDesign() {
             inlay tray, spine, a CD disc graphic, and a concert poster.
           </SectionText>
           <ImageContainer>
-            <Image
+            <Img
               src={cdRedesign.image}
               alt={cdRedesign.title}
               width={957}
               height={620}
+              onClick={() => openModal(cdRedesign)}
             />
           </ImageContainer>
         </Section>
@@ -126,11 +131,12 @@ export default function GraphicDesign() {
             and a sugar scrub.
           </SectionText>
           <ImageContainer>
-            <Image
+            <Img
               src={helloDoll.image}
               alt={helloDoll.title}
               width={920}
               height={1174}
+              onClick={() => openModal(helloDoll)}
             />
           </ImageContainer>
         </Section>
