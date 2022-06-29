@@ -1,6 +1,23 @@
 import Head from "next/head";
+import Image from "next/image";
+import styled from "styled-components";
 import Layout from "../components/Layout";
 import { Section, SectionTitle, SectionText } from "../styles/GlobalComponents";
+
+const ArtContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100rem;
+  margin: 8rem 0;
+`;
+
+const ImageContainer = styled.div`
+  margin: 0.5rem;
+  width: 40rem;
+  height: 40rem;
+  position: relative;
+`;
 
 export default function GraphicDesign() {
   return (
