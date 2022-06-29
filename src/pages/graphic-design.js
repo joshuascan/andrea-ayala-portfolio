@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useState } from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import { Section, SectionTitle, SectionText } from "../styles/GlobalComponents";
@@ -9,6 +10,7 @@ import {
   cdRedesign,
   helloDoll,
 } from "../constants";
+import Modal from "../components/Modal";
 
 const EditorialContainer = styled.div`
   display: flex;
@@ -27,7 +29,19 @@ const ImageContainer = styled.div`
   margin: 3rem 0 7rem 0;
 `;
 
+const Img = styled(Image)`
+  cursor: pointer;
+`;
+
 export default function GraphicDesign() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [data, setData] = useState({ image: "", description: "" });
+
+  const openModal = (imageData) => {
+    setData(imageData);
+    setIsOpen(true);
+  };
+
   return (
     <>
       <Head>
@@ -37,6 +51,7 @@ export default function GraphicDesign() {
       </Head>
 
       <Layout>
+        <Modal isOpen={isOpen} setIsOpen={setIsOpen} data={data} />
         <Section>
           <SectionTitle>TYPE AS EDITORIAL</SectionTitle>
           <SectionText>
@@ -52,7 +67,13 @@ export default function GraphicDesign() {
             {editorialProjects.map(({ title, description, image, id }) => {
               return (
                 <EditorialImageContainer key={id}>
-                  <Image src={image} alt={title} width={901} height={400} />
+                  <Img
+                    src={image}
+                    alt={title}
+                    width={901}
+                    height={400}
+                    onClick={() => openModal({ title, description, image, id })}
+                  />
                 </EditorialImageContainer>
               );
             })}
@@ -70,11 +91,12 @@ export default function GraphicDesign() {
             easier for their kids to take their vitamins.
           </SectionText>
           <ImageContainer>
-            <Image
+            <Img
               src={superkids.image}
               alt={superkids.title}
               width={929}
               height={648}
+              onClick={() => openModal(superkids)}
             />
           </ImageContainer>
         </Section>
@@ -89,11 +111,12 @@ export default function GraphicDesign() {
             inlay tray, spine, a CD disc graphic, and a concert poster.
           </SectionText>
           <ImageContainer>
-            <Image
+            <Img
               src={cdRedesign.image}
               alt={cdRedesign.title}
               width={957}
               height={620}
+              onClick={() => openModal(cdRedesign)}
             />
           </ImageContainer>
         </Section>
@@ -108,11 +131,12 @@ export default function GraphicDesign() {
             and a sugar scrub.
           </SectionText>
           <ImageContainer>
-            <Image
+            <Img
               src={helloDoll.image}
               alt={helloDoll.title}
               width={920}
               height={1174}
+              onClick={() => openModal(helloDoll)}
             />
           </ImageContainer>
         </Section>

@@ -131,6 +131,7 @@ export const superkids = {
 
 export const cdRedesign = {
   title: "CD Redesign",
+  description: "CD Redesign",
   image: "/images/graphic-design/CDRedesign.png",
 };
 
