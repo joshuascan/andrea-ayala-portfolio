@@ -15,17 +15,13 @@ const ArtContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 100rem;
-  margin: 5rem 0;
+  margin: 8rem 0;
 `;
 
 const ImageContainer = styled.div`
   margin: 0.5rem;
-  display: flex;
-  width: 41rem;
-  height: 41rem;
-  display: block;
-  overflow: hidden;
-  object-fit: 50% 50%;
+  width: 40rem;
+  height: 40rem;
   position: relative;
 `;
 

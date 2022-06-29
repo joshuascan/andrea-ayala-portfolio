@@ -107,3 +107,24 @@ export const tatchaArt = [
     id: 3,
   },
 ];
+
+export const editorialProjects = [
+  {
+    title: "Utopia",
+    description: "Type As Editorial / Utopia",
+    image: "/images/graphic-design/Utopia.png",
+    id: 0,
+  },
+  {
+    title: "Cochin",
+    description: "Type As Editorial / Cochin",
+    image: "/images/graphic-design/cochin.png",
+    id: 1,
+  },
+];
+
+export const superkids = {
+  title: "Superkids",
+  description: "Package Design / Superkids",
+  image: "/images/graphic-design/Superkids.png",
+};

@@ -3,18 +3,19 @@ import Image from "next/image";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import { Section, SectionTitle, SectionText } from "../styles/GlobalComponents";
+import { editorialProjects } from "../constants";
 
 const ArtContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100rem;
-  margin: 8rem 0;
+  margin-top: 3rem;
 `;
 
 const ImageContainer = styled.div`
   margin: 0.5rem;
-  width: 40rem;
+  width: 90rem;
   height: 40rem;
   position: relative;
 `;
@@ -40,6 +41,36 @@ export default function GraphicDesign() {
             meaning and to develop an appreciation of type as letter forms in
             composition.
           </SectionText>
+          <ArtContainer>
+            {editorialProjects.map(({ title, description, image, id }) => {
+              return (
+                <ImageContainer key={id}>
+                  <Image src={image} alt={title} width={4500} height={2038} />
+                </ImageContainer>
+              );
+            })}
+          </ArtContainer>
+        </Section>
+        <Section>
+          <SectionTitle>SUPERKIDS</SectionTitle>
+          <SectionText>
+            This was a vitamin packaging project in which we had to research two
+            different vitamin types, choose a theme, and design wrap around
+            bottle labels for them. Using a bright and friendly color palette,
+            and fun cartoon characters on the bottles, I wanted my target
+            audience to respond with enthusiasm and an eagerness to give this
+            product to their kids with trust, and to hopefully make it a little
+            easier for their kids to take their vitamins.
+          </SectionText>
+          <ArtContainer>
+            {editorialProjects.map(({ title, description, image, id }) => {
+              return (
+                <ImageContainer key={id}>
+                  <Image src={image} alt={title} width={4500} height={2038} />
+                </ImageContainer>
+              );
+            })}
+          </ArtContainer>
         </Section>
       </Layout>
     </>
