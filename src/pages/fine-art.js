@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Layout from "../components/Layout";
+import Carousel from "../components/Carousel";
 import { Section, SectionTitle, SectionText } from "../styles/GlobalComponents";
 
 export default function FineArt() {
@@ -16,6 +17,7 @@ export default function FineArt() {
           <SectionTitle>FINE ART</SectionTitle>
           <SectionText>A selection of some of my personal artwork.</SectionText>
         </Section>
+        <Carousel />
       </Layout>
     </>
   );
