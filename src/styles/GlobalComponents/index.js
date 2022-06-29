@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   padding: 7rem;
+  padding: ${({ nopadding }) => (nopadding ? "0" : "7rem")};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,6 +20,7 @@ export const SectionText = styled.p`
   font-family: ${({ theme }) => theme.fonts.montserrat};
   letter-spacing: 0.1rem;
   line-height: 1.8;
+  font-size: 1.5rem;
   color: #605e5e;
   text-align: center;
   width: 68rem;

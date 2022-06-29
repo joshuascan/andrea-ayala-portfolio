@@ -3,9 +3,14 @@ import Image from "next/image";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import { Section, SectionTitle, SectionText } from "../styles/GlobalComponents";
-import { editorialProjects } from "../constants";
+import {
+  editorialProjects,
+  superkids,
+  cdRedesign,
+  helloDoll,
+} from "../constants";
 
-const ArtContainer = styled.div`
+const EditorialContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -13,11 +18,13 @@ const ArtContainer = styled.div`
   margin-top: 3rem;
 `;
 
-const ImageContainer = styled.div`
+const EditorialImageContainer = styled.div`
   margin: 0.5rem;
-  width: 90rem;
-  height: 40rem;
   position: relative;
+`;
+
+const ImageContainer = styled.div`
+  margin: 3rem 0 7rem 0;
 `;
 
 export default function GraphicDesign() {
@@ -41,17 +48,17 @@ export default function GraphicDesign() {
             meaning and to develop an appreciation of type as letter forms in
             composition.
           </SectionText>
-          <ArtContainer>
+          <EditorialContainer>
             {editorialProjects.map(({ title, description, image, id }) => {
               return (
-                <ImageContainer key={id}>
-                  <Image src={image} alt={title} width={4500} height={2038} />
-                </ImageContainer>
+                <EditorialImageContainer key={id}>
+                  <Image src={image} alt={title} width={901} height={400} />
+                </EditorialImageContainer>
               );
             })}
-          </ArtContainer>
+          </EditorialContainer>
         </Section>
-        <Section>
+        <Section nopadding>
           <SectionTitle>SUPERKIDS</SectionTitle>
           <SectionText>
             This was a vitamin packaging project in which we had to research two
@@ -62,15 +69,52 @@ export default function GraphicDesign() {
             product to their kids with trust, and to hopefully make it a little
             easier for their kids to take their vitamins.
           </SectionText>
-          <ArtContainer>
-            {editorialProjects.map(({ title, description, image, id }) => {
-              return (
-                <ImageContainer key={id}>
-                  <Image src={image} alt={title} width={4500} height={2038} />
-                </ImageContainer>
-              );
-            })}
-          </ArtContainer>
+          <ImageContainer>
+            <Image
+              src={superkids.image}
+              alt={superkids.title}
+              width={929}
+              height={648}
+            />
+          </ImageContainer>
+        </Section>
+        <Section nopadding>
+          <SectionTitle>CD RE-DESIGN</SectionTitle>
+          <SectionText>
+            For this project we needed to take an existing Music CD that we felt
+            could be improved with a redesign. Based on the style of the
+            CD&apos;s musical theme and lyrics, I created a nautical theme
+            design for the CD booklet and poster. I chose, The Rising Tide by
+            Sunny Day Real Estate. We were required to create a CD booklet,
+            inlay tray, spine, a CD disc graphic, and a concert poster.
+          </SectionText>
+          <ImageContainer>
+            <Image
+              src={cdRedesign.image}
+              alt={cdRedesign.title}
+              width={957}
+              height={620}
+            />
+          </ImageContainer>
+        </Section>
+        <Section nopadding>
+          <SectionTitle>HELLO DOLL!</SectionTitle>
+          <SectionText>
+            For my senior project I created the identity and packaging for a
+            fictitious company, Hello Doll! which specializes in bath and body
+            products. The company&apos;s theme uses a fun and vintage design. I
+            created three different patterns to represent the scents the company
+            offers. The products I created included lotion, body spray, soap,
+            and a sugar scrub.
+          </SectionText>
+          <ImageContainer>
+            <Image
+              src={helloDoll.image}
+              alt={helloDoll.title}
+              width={920}
+              height={1174}
+            />
+          </ImageContainer>
         </Section>
       </Layout>
     </>

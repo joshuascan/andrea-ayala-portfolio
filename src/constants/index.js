@@ -128,3 +128,14 @@ export const superkids = {
   description: "Package Design / Superkids",
   image: "/images/graphic-design/Superkids.png",
 };
+
+export const cdRedesign = {
+  title: "CD Redesign",
+  image: "/images/graphic-design/CDRedesign.png",
+};
+
+export const helloDoll = {
+  title: "Hello Doll",
+  description: "Package Design / Hello Doll!",
+  image: "/images/graphic-design/hello-doll.png",
+};
