@@ -48,11 +48,7 @@ export default function GraphicDesign() {
       </Head>
 
       <Layout>
-        <Modal
-          isOpen={isOpen}
-          data={data}
-          onRequestClose={() => setIsOpen(false)}
-        />
+        <Modal isOpen={isOpen} setIsOpen={setIsOpen} data={data} />
         <Section>
           <SectionTitle>TYPE AS EDITORIAL</SectionTitle>
           <SectionText>
