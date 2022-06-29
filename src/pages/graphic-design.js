@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useState } from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import { Section, SectionTitle, SectionText } from "../styles/GlobalComponents";
@@ -9,6 +10,7 @@ import {
   cdRedesign,
   helloDoll,
 } from "../constants";
+import Modal from "../components/Modal";
 
 const EditorialContainer = styled.div`
   display: flex;
@@ -28,6 +30,15 @@ const ImageContainer = styled.div`
 `;
 
 export default function GraphicDesign() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [data, setData] = useState({ image: "", description: "" });
+
+  const openModal = (imageData) => {
+    setData(imageData);
+    console.log(data);
+    setIsOpen(true);
+  };
+
   return (
     <>
       <Head>
@@ -37,6 +48,11 @@ export default function GraphicDesign() {
       </Head>
 
       <Layout>
+        <Modal
+          isOpen={isOpen}
+          data={data}
+          onRequestClose={() => setIsOpen(false)}
+        />
         <Section>
           <SectionTitle>TYPE AS EDITORIAL</SectionTitle>
           <SectionText>
@@ -52,7 +68,13 @@ export default function GraphicDesign() {
             {editorialProjects.map(({ title, description, image, id }) => {
               return (
                 <EditorialImageContainer key={id}>
-                  <Image src={image} alt={title} width={901} height={400} />
+                  <Image
+                    src={image}
+                    alt={title}
+                    width={901}
+                    height={400}
+                    onClick={() => openModal({ title, description, image, id })}
+                  />
                 </EditorialImageContainer>
               );
             })}
