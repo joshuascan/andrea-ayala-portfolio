@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Image from "next/image";
+import styled from "styled-components";
 import Layout from "../components/Layout";
 import {
   Section,
@@ -6,6 +8,26 @@ import {
   SectionText,
   CopyrightText,
 } from "../styles/GlobalComponents";
+import { tatchaArt } from "../constants";
+
+const ArtContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100rem;
+  margin: 5rem 0;
+`;
+
+const ImageContainer = styled.div`
+  margin: 0.5rem;
+  display: flex;
+  width: 41rem;
+  height: 41rem;
+  display: block;
+  overflow: hidden;
+  object-fit: 50% 50%;
+  position: relative;
+`;
 
 export default function Tatcha() {
   return (
@@ -26,6 +48,23 @@ export default function Tatcha() {
             of products I&apos;ve helped to produce.
           </SectionText>
           <CopyrightText>All artwork © TATCHA, 2021</CopyrightText>
+          <ArtContainer>
+            {tatchaArt.map(({ image, id }) => {
+              return (
+                <ImageContainer key={id}>
+                  <Image
+                    src={image}
+                    alt="Tatcha Products"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="50% 77%"
+                    width={1440}
+                    height={1800}
+                  />
+                </ImageContainer>
+              );
+            })}
+          </ArtContainer>
         </Section>
       </Layout>
     </>

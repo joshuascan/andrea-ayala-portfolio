@@ -88,3 +88,22 @@ export const productionArt = [
     id: 12,
   },
 ];
+
+export const tatchaArt = [
+  {
+    image: "/images/tatcha/Tatcha-1.jpg",
+    id: 0,
+  },
+  {
+    image: "/images/tatcha/Tatcha-2.png",
+    id: 1,
+  },
+  {
+    image: "/images/tatcha/Tatcha-3.png",
+    id: 2,
+  },
+  {
+    image: "/images/tatcha/Tatcha-4.png",
+    id: 3,
+  },
+];
