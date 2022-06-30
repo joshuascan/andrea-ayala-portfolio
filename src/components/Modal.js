@@ -165,7 +165,11 @@ export default function Modal({
           <Image
             src={data.image}
             alt={data.description}
-            style={{ height: "70vh", width: "auto" }}
+            style={
+              data.title === "Hello Doll"
+                ? { height: "85vh", width: "auto" }
+                : { width: "80vw", height: "auto" }
+            }
           />
           <DescriptionText>{data.description}</DescriptionText>
         </>
