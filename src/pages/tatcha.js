@@ -45,21 +45,19 @@ export default function Tatcha() {
           </SectionText>
           <CopyrightText>All artwork © TATCHA, 2021</CopyrightText>
           <ArtContainer>
-            {tatchaArt.map(({ image, id }) => {
-              return (
-                <ImageContainer key={id}>
-                  <Image
-                    src={image}
-                    alt="Tatcha Products"
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="50% 77%"
-                    width={1440}
-                    height={1800}
-                  />
-                </ImageContainer>
-              );
-            })}
+            {tatchaArt.map(({ image, id }) => (
+              <ImageContainer key={id}>
+                <Image
+                  src={image}
+                  alt="Tatcha Products"
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="50% 77%"
+                  width={1440}
+                  height={1800}
+                />
+              </ImageContainer>
+            ))}
           </ArtContainer>
         </Section>
       </Layout>

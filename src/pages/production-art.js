@@ -46,19 +46,17 @@ export default function ProductionArt() {
             All artwork © All American Label & Packaging
           </CopyrightText>
           <ArtContainer>
-            {productionArt.map(({ title, description, image, id }) => {
-              return (
-                <ImageContainer key={id}>
-                  <Image
-                    style={{ height: "22rem", width: "auto" }}
-                    src={image}
-                    alt={title}
-                    sizes="25vw"
-                    priority
-                  />
-                </ImageContainer>
-              );
-            })}
+            {productionArt.map(({ title, description, image, id }) => (
+              <ImageContainer key={id}>
+                <Image
+                  style={{ height: "22rem", width: "auto" }}
+                  src={image}
+                  alt={title}
+                  sizes="25vw"
+                  priority
+                />
+              </ImageContainer>
+            ))}
           </ArtContainer>
         </Section>
       </Layout>

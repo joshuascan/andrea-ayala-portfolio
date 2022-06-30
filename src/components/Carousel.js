@@ -1,59 +1,104 @@
-import Slider from "react-slick";
 import styled from "styled-components";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext,
+} from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
 import Image from "next/future/image";
+import { fineArt } from "../constants";
 
-const CarouselWrapper = styled.div`
-  /* width: 500px; */
+const CarouselWrapper = styled(CarouselProvider)`
   margin: 0 auto;
+  display: flex;
+  width: 90rem;
 `;
 
 const StyledSlider = styled(Slider)`
+  height: 900px;
   width: 900px;
+  margin: 0 auto;
+`;
+
+const SlideContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Img = styled(Image)`
+  margin: 0 auto;
+`;
+
+const TextContainer = styled.div`
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 0;
+  top: 800px;
+  width: 100%;
+  height: 80px;
+  padding: 1rem;
+`;
+
+const TitleText = styled.p`
+  font-family: ${({ theme }) => theme.fonts.montserrat};
+  font-size: 2rem;
+`;
+
+const DescriptionText = styled.p`
+  font-family: ${({ theme }) => theme.fonts.montserrat};
+  font-size: 1.4rem;
+`;
+
+const BackButton = styled(ButtonBack)`
+  font-size: 8rem;
+  color: black;
+  opacity: 0.15;
+  background: none;
+  transition: opacity 0.3s ease-in-out;
+
+  :hover {
+    opacity: 0.4;
+  }
+`;
+
+const NextButton = styled(ButtonNext)`
+  font-size: 8rem;
+  color: black;
+  opacity: 0.15;
+  background: none;
+  transition: opacity 0.3s ease-in-out;
+
+  :hover {
+    opacity: 0.4;
+  }
 `;
 
 export default function Carousel() {
-  const settings = {
-    dots: true,
-    fade: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
   return (
-    <div>
-      <Slider {...settings}>
-        <div>
-          <Image
-            src={"/images/fine-art/Abstract_right.png"}
-            alt="next image"
-            style={{ height: "70vh", width: "auto" }}
-          />
-        </div>
-        <div>
-          <Image
-            src={"/images/fine-art/Abstract_left.png"}
-            alt="next image"
-            style={{ height: "70vh", width: "auto" }}
-          />
-        </div>
-        <div>
-          <Image
-            src={"/images/fine-art/Cherry-Blossom.png"}
-            alt="next image"
-            style={{ height: "70vh", width: "auto" }}
-          />
-        </div>
-        <div>
-          <Image
-            src={"/images/fine-art/Russian-Doll.png"}
-            alt="next image"
-            style={{ height: "70vh", width: "auto" }}
-          />
-        </div>
-      </Slider>
-    </div>
+    <CarouselWrapper
+      naturalSlideWidth={100}
+      naturalSlideHeight={45}
+      totalSlides={4}
+    >
+      <BackButton>&#10094;</BackButton>
+      <StyledSlider>
+        {fineArt.map(({ title, description, image, id }) => (
+          <Slide index={id} key={id}>
+            <SlideContainer>
+              <Img src={image} alt={title} height={850} />
+              <TextContainer>
+                <TitleText>{title}</TitleText>
+                <DescriptionText>{description}</DescriptionText>
+              </TextContainer>
+            </SlideContainer>
+          </Slide>
+        ))}
+      </StyledSlider>
+      <NextButton>&#10095;</NextButton>
+    </CarouselWrapper>
   );
 }
