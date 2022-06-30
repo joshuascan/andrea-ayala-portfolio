@@ -81,7 +81,7 @@ export default function Tatcha() {
                   alt="Tatcha Products"
                   layout="fill"
                   objectFit="cover"
-                  objectPosition="50% 77%"
+                  objectPosition="50% 79%"
                   priority
                   onClick={() => openModal(tatchaArt, id)}
                 />
