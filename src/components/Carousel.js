@@ -11,7 +11,7 @@ import Image from "next/future/image";
 import { fineArt } from "../constants";
 
 const CarouselWrapper = styled(CarouselProvider)`
-  margin: 0 auto;
+  margin: 2rem auto 0;
   display: flex;
   width: 90rem;
 `;

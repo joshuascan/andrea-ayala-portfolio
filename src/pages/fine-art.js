@@ -16,8 +16,8 @@ export default function FineArt() {
         <Section>
           <SectionTitle>FINE ART</SectionTitle>
           <SectionText>A selection of some of my personal artwork.</SectionText>
+          <Carousel />
         </Section>
-        <Carousel />
       </Layout>
     </>
   );
