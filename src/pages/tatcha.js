@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useState } from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import {
@@ -9,6 +10,7 @@ import {
   CopyrightText,
 } from "../styles/GlobalComponents";
 import { tatchaArt } from "../constants";
+import Modal from "../components/Modal";
 
 const ArtContainer = styled.div`
   display: flex;
@@ -23,9 +25,27 @@ const ImageContainer = styled.div`
   width: 40rem;
   height: 40rem;
   position: relative;
+  background-color: black;
+`;
+
+const Img = styled(Image)`
+  :hover {
+    opacity: 0.75;
+    cursor: pointer;
+  }
 `;
 
 export default function Tatcha() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [data, setData] = useState([]);
+  const [startingSlide, setStartingSlide] = useState();
+
+  const openModal = (dataArray, index) => {
+    setData(dataArray);
+    setStartingSlide(index);
+    setIsOpen(true);
+  };
+
   return (
     <>
       <Head>
@@ -35,6 +55,15 @@ export default function Tatcha() {
       </Head>
 
       <Layout>
+        <Modal
+          isCarousel={true}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          data={data}
+          startingSlide={startingSlide}
+          imageHeight="90rem"
+          containerHeight="90rem"
+        />
         <Section>
           <SectionTitle>TATCHA</SectionTitle>
           <SectionText>
@@ -47,14 +76,14 @@ export default function Tatcha() {
           <ArtContainer>
             {tatchaArt.map(({ image, id }) => (
               <ImageContainer key={id}>
-                <Image
+                <Img
                   src={image}
                   alt="Tatcha Products"
                   layout="fill"
                   objectFit="cover"
                   objectPosition="50% 77%"
-                  width={1440}
-                  height={1800}
+                  priority
+                  onClick={() => openModal(tatchaArt, id)}
                 />
               </ImageContainer>
             ))}

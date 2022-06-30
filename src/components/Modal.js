@@ -62,8 +62,8 @@ const CarouselWrapper = styled(CarouselProvider)`
 `;
 
 const StyledSlider = styled(Slider)`
-  height: 650px;
   width: 1350px;
+  height: ${(props) => props.height};
   margin: 0 auto;
 `;
 
@@ -71,23 +71,10 @@ const SlideContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 650px;
 `;
 
 const Img = styled(Image)`
   margin: 0 auto;
-`;
-
-const TextContainer = styled.div`
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 100%;
-  height: 80px;
-  padding: 1rem;
-`;
-
-const TitleText = styled.p`
-  font-family: ${({ theme }) => theme.fonts.montserrat};
-  font-size: 2rem;
 `;
 
 const buttonStyles = css`
@@ -118,6 +105,8 @@ export default function Modal({
   data,
   isCarousel,
   startingSlide,
+  imageHeight,
+  containerHeight,
 }) {
   useEffect(() => {
     if (isOpen) {
@@ -126,8 +115,6 @@ export default function Modal({
       document.body.style.overflow = "scroll";
     }
   }, [isOpen]);
-
-  if (isOpen === false) return;
 
   return (
     <ReactModal
@@ -155,16 +142,18 @@ export default function Modal({
           infinite={true}
         >
           <BackButton>&#10094;</BackButton>
-          <StyledSlider>
+          <StyledSlider height={containerHeight}>
             {data.map(({ title, description, image, id }) => (
               <Slide index={id} key={id}>
                 <SlideContainer>
                   <Img
                     src={image}
                     alt={title}
-                    style={{ height: "55rem", width: "auto" }}
+                    style={{ height: imageHeight, width: "auto" }}
                   />
-                  <DescriptionText>{description}</DescriptionText>
+                  {description && (
+                    <DescriptionText>{description}</DescriptionText>
+                  )}
                 </SlideContainer>
               </Slide>
             ))}

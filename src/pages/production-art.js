@@ -55,6 +55,8 @@ export default function ProductionArt() {
           setIsOpen={setIsOpen}
           data={data}
           startingSlide={startingSlide}
+          imageHeight="55rem"
+          containerHeight="65rem"
         />
         <Section>
           <SectionTitle>PRODUCTION ART</SectionTitle>
