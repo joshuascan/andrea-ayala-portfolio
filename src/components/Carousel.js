@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {
   CarouselProvider,
   Slider,
@@ -53,7 +53,7 @@ const DescriptionText = styled.p`
   font-size: 1.4rem;
 `;
 
-const BackButton = styled(ButtonBack)`
+const buttonStyles = css`
   font-size: 8rem;
   color: black;
   opacity: 0.15;
@@ -65,24 +65,22 @@ const BackButton = styled(ButtonBack)`
   }
 `;
 
-const NextButton = styled(ButtonNext)`
-  font-size: 8rem;
-  color: black;
-  opacity: 0.15;
-  background: none;
-  transition: opacity 0.3s ease-in-out;
+const BackButton = styled(ButtonBack)`
+  ${buttonStyles}
+  }
+`;
 
-  :hover {
-    opacity: 0.4;
+const NextButton = styled(ButtonNext)`
+  ${buttonStyles}
   }
 `;
 
 export default function Carousel() {
   return (
     <CarouselWrapper
-      naturalSlideWidth={100}
-      naturalSlideHeight={45}
-      totalSlides={4}
+      naturalSlideWidth={900}
+      naturalSlideHeight={900}
+      totalSlides={fineArt.length}
     >
       <BackButton>&#10094;</BackButton>
       <StyledSlider>
