@@ -35,7 +35,7 @@ const Img = styled(Image)`
 
 export default function GraphicDesign() {
   const [isOpen, setIsOpen] = useState(false);
-  const [data, setData] = useState({ image: "", description: "" });
+  const [data, setData] = useState({});
 
   const openModal = (imageData) => {
     setData(imageData);

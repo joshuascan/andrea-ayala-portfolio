@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Image from "next/future/image";
 import Head from "next/head";
+import { useState } from "react";
 import Layout from "../components/Layout";
 import {
   Section,
@@ -9,6 +10,7 @@ import {
   CopyrightText,
 } from "../styles/GlobalComponents";
 import { productionArt } from "../constants";
+import Modal from "../components/Modal";
 
 const ArtContainer = styled.div`
   display: flex;
@@ -23,7 +25,21 @@ const ImageContainer = styled.div`
   display: flex;
 `;
 
+const Img = styled(Image)`
+  cursor: pointer;
+`;
+
 export default function ProductionArt() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [data, setData] = useState([]);
+  const [startingSlide, setStartingSlide] = useState();
+
+  const openModal = (dataArray, index) => {
+    setData(dataArray);
+    setStartingSlide(index);
+    setIsOpen(true);
+  };
+
   return (
     <>
       <Head>
@@ -33,6 +49,13 @@ export default function ProductionArt() {
       </Head>
 
       <Layout>
+        <Modal
+          isCarousel={true}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          data={data}
+          startingSlide={startingSlide}
+        />
         <Section>
           <SectionTitle>PRODUCTION ART</SectionTitle>
           <SectionText>
@@ -48,12 +71,13 @@ export default function ProductionArt() {
           <ArtContainer>
             {productionArt.map(({ title, description, image, id }) => (
               <ImageContainer key={id}>
-                <Image
+                <Img
                   style={{ height: "22rem", width: "auto" }}
                   src={image}
                   alt={title}
                   sizes="25vw"
                   priority
+                  onClick={() => openModal(productionArt, id)}
                 />
               </ImageContainer>
             ))}

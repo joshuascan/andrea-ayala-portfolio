@@ -59,6 +59,8 @@ const buttonStyles = css`
   opacity: 0.15;
   background: none;
   transition: opacity 0.3s ease-in-out;
+  height: fit-content;
+  margin: auto 0;
 
   :hover {
     opacity: 0.4;
@@ -67,12 +69,10 @@ const buttonStyles = css`
 
 const BackButton = styled(ButtonBack)`
   ${buttonStyles}
-  }
 `;
 
 const NextButton = styled(ButtonNext)`
   ${buttonStyles}
-  }
 `;
 
 export default function Carousel() {
@@ -87,7 +87,11 @@ export default function Carousel() {
         {fineArt.map(({ title, description, image, id }) => (
           <Slide index={id} key={id}>
             <SlideContainer>
-              <Img src={image} alt={title} height={850} />
+              <Img
+                src={image}
+                alt={title}
+                style={{ height: "850px", width: "auto" }}
+              />
               <TextContainer>
                 <TitleText>{title}</TitleText>
                 <DescriptionText>{description}</DescriptionText>
