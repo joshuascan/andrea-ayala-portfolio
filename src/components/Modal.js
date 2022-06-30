@@ -152,6 +152,7 @@ export default function Modal({
           naturalSlideHeight={650}
           totalSlides={data.length}
           currentSlide={startingSlide}
+          infinite={true}
         >
           <BackButton>&#10094;</BackButton>
           <StyledSlider>

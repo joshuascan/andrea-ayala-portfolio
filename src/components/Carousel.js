@@ -81,6 +81,7 @@ export default function Carousel() {
       naturalSlideWidth={900}
       naturalSlideHeight={900}
       totalSlides={fineArt.length}
+      infinite={true}
     >
       <BackButton>&#10094;</BackButton>
       <StyledSlider>
