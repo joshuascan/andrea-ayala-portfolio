@@ -7,11 +7,34 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   height: 12.6rem;
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    height: 10rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    flex-direction: column;
+    justify-content: space-around;
+  }
 `;
 
 const TextContainer = styled.div`
   text-align: right;
   width: 49.5rem;
+
+  @media screen and (max-width: 1360px) {
+    width: 45rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    width: 34%;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    width: 40rem;
+    text-align: center;
+    margin: 1rem 0;
+  }
 `;
 
 const Name = styled.a`
@@ -21,6 +44,10 @@ const Name = styled.a`
   text-align: right;
   letter-spacing: 0;
   margin-right: -0.9rem;
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    font-size: 2.6rem;
+  }
 `;
 
 const Title = styled.p`
@@ -30,11 +57,23 @@ const Title = styled.p`
   letter-spacing: 0.22rem;
   margin-top: 0.7rem;
   margin-right: -0.4rem;
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    font-size: 1rem;
+  }
 `;
 
 const NavContainer = styled.nav`
   display: flex;
   padding-right: 3rem;
+
+  @media screen and (max-width: 1360px) {
+    padding-right: 1rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    padding-right: 0.5rem;
+  }
 `;
 
 const NavLink = styled.a`
@@ -50,6 +89,15 @@ const NavLink = styled.a`
 
   :hover {
     color: ${({ theme }) => theme.colors.pink};
+  }
+
+  @media screen and (max-width: 1360px) {
+    padding: 0 1rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    padding: 0 0.75rem;
+    font-size: 1.1rem;
   }
 `;
 
