@@ -35,7 +35,7 @@ const Img = styled(Image)`
 
 export default function GraphicDesign() {
   const [isOpen, setIsOpen] = useState(false);
-  const [data, setData] = useState({ image: "", description: "" });
+  const [data, setData] = useState({});
 
   const openModal = (imageData) => {
     setData(imageData);
@@ -64,19 +64,17 @@ export default function GraphicDesign() {
             composition.
           </SectionText>
           <EditorialContainer>
-            {editorialProjects.map(({ title, description, image, id }) => {
-              return (
-                <EditorialImageContainer key={id}>
-                  <Img
-                    src={image}
-                    alt={title}
-                    width={901}
-                    height={400}
-                    onClick={() => openModal({ title, description, image, id })}
-                  />
-                </EditorialImageContainer>
-              );
-            })}
+            {editorialProjects.map(({ title, description, image, id }) => (
+              <EditorialImageContainer key={id}>
+                <Img
+                  src={image}
+                  alt={title}
+                  width={901}
+                  height={400}
+                  onClick={() => openModal({ title, description, image, id })}
+                />
+              </EditorialImageContainer>
+            ))}
           </EditorialContainer>
         </Section>
         <Section nopadding>

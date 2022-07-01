@@ -140,3 +140,30 @@ export const helloDoll = {
   description: "Package Design / Hello Doll!",
   image: "/images/graphic-design/hello-doll.png",
 };
+
+export const fineArt = [
+  {
+    title: "Abstract #1",
+    description: "Mixed media",
+    image: "/images/fine-art/Abstract_right.png",
+    id: 0,
+  },
+  {
+    title: "Abstract #2",
+    description: "Mixed media",
+    image: "/images/fine-art/Abstract_left.png",
+    id: 1,
+  },
+  {
+    title: "Cherry Blossom",
+    description: "Hand carved block print",
+    image: "/images/fine-art/Cherry-Blossom.png",
+    id: 2,
+  },
+  {
+    title: "Russian Doll",
+    description: "Hand carved block print",
+    image: "/images/fine-art/Russian-Doll.png",
+    id: 3,
+  },
+];
