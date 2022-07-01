@@ -47,11 +47,11 @@ const CloseButton = styled.button`
   font-size: 2.5rem;
   font-family: ${({ theme }) => theme.fonts.montserrat};
   color: white;
+  background-color: transparent;
   padding: 0;
-  line-height: 0;
   cursor: pointer;
   position: absolute;
-  top: 50px;
+  top: 35px;
   right: 50px;
 `;
 
@@ -168,7 +168,7 @@ export default function Modal({
             style={
               data.title === "Hello Doll"
                 ? { height: "85vh", width: "auto" }
-                : { width: "80vw", height: "auto" }
+                : { width: "80vw", maxWidth: "1600px", height: "auto" }
             }
           />
           <DescriptionText>{data.description}</DescriptionText>
