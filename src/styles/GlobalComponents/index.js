@@ -9,10 +9,6 @@ export const Section = styled.section`
   align-items: center;
 
   @media ${({ theme }) => theme.breakpoints.xl} {
-    padding: ${({ nopadding }) => (nopadding ? "0" : "4rem 0rem")};
-  }
-
-  @media ${({ theme }) => theme.breakpoints.lg} {
     padding: ${({ nopadding }) => (nopadding ? "0" : "5.5rem 0rem")};
   }
 
@@ -26,6 +22,11 @@ export const SectionTitle = styled.h2`
   font-size: 1.8rem;
   letter-spacing: 0;
   margin-bottom: 2.5rem;
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export const SectionText = styled.p`
@@ -37,6 +38,10 @@ export const SectionText = styled.p`
   text-align: center;
   max-width: 68rem;
   width: 90%;
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    font-size: 1.2rem;
+  }
 `;
 
 export const CopyrightText = styled.p`
@@ -45,4 +50,8 @@ export const CopyrightText = styled.p`
   letter-spacing: 0;
   color: #939598;
   margin-top: 0.5rem;
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    font-size: 0.8rem;
+  }
 `;

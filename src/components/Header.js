@@ -79,6 +79,11 @@ const Title = styled.p`
   @media ${({ theme }) => theme.breakpoints.xl} {
     font-size: 1rem;
   }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+  }
 `;
 
 const NavContainer = styled.nav`

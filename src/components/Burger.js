@@ -10,8 +10,8 @@ export const StyledBurger = styled.button`
   padding: 0;
   z-index: 10;
 
-  &:focus {
-    outline: none;
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    height: 2.5rem;
   }
 
   div {
@@ -20,6 +20,11 @@ export const StyledBurger = styled.button`
     background: ${(props) => (props.open ? "white" : "black")};
     transition: transform 0.4s linear;
     transform-origin: 1px;
+
+    @media ${({ theme }) => theme.breakpoints.sm} {
+      width: 2.5rem;
+      height: 0.25rem;
+    }
 
     :first-child {
       transform: ${(props) => (props.open ? "rotate(45deg)" : "rotate(0)")};

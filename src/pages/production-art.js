@@ -18,15 +18,33 @@ const ArtContainer = styled.div`
   justify-content: center;
   width: 100%;
   margin: 5rem 0;
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    margin: 3rem 0;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    margin-bottom: 0;
+  }
 `;
 
 const ImageContainer = styled.div`
   padding: 2rem;
   display: flex;
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    padding: 0.75rem;
+  }
 `;
 
 const Img = styled(Image)`
   cursor: pointer;
+  height: 22rem;
+  width: auto;
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    height: 14rem;
+  }
 `;
 
 export default function ProductionArt() {
@@ -74,7 +92,6 @@ export default function ProductionArt() {
             {productionArt.map(({ title, description, image, id }) => (
               <ImageContainer key={id}>
                 <Img
-                  style={{ height: "22rem", width: "auto" }}
                   src={image}
                   alt={title}
                   sizes="25vw"
