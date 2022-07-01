@@ -16,7 +16,7 @@ const ArtContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 125rem;
+  width: 100%;
   margin: 5rem 0;
 `;
 

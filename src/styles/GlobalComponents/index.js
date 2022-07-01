@@ -7,6 +7,18 @@ export const Section = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    padding: ${({ nopadding }) => (nopadding ? "0" : "4rem 0rem")};
+  }
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    padding: ${({ nopadding }) => (nopadding ? "0" : "5.5rem 0rem")};
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    padding: ${({ nopadding }) => (nopadding ? "0" : "4rem 0rem")};
+  }
 `;
 
 export const SectionTitle = styled.h2`
@@ -23,7 +35,8 @@ export const SectionText = styled.p`
   font-size: 1.5rem;
   color: #605e5e;
   text-align: center;
-  width: 68rem;
+  max-width: 68rem;
+  width: 90%;
 `;
 
 export const CopyrightText = styled.p`
