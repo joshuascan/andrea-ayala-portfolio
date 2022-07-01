@@ -4,6 +4,10 @@ import styled from "styled-components";
 const FooterContainer = styled.footer`
   background-color: black;
   padding-top: 2rem;
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    padding-bottom: 2rem;
+  }
 `;
 
 const FooterText = styled.p`
@@ -12,6 +16,11 @@ const FooterText = styled.p`
   font-family: ${({ theme }) => theme.fonts.futuraLight};
   font-weight: 400;
   font-size: 1.4rem;
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+  }
 `;
 
 const FooterLink = styled.a`
