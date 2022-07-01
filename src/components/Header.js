@@ -20,7 +20,10 @@ const HeaderContainer = styled.header`
 
   @media ${({ theme }) => theme.breakpoints.md} {
     flex-direction: row;
-    border: 1px solid red;
+    justify-content: space-between;
+    height: fit-content;
+    align-items: flex-start;
+    padding: 1rem 2rem 0;
   }
 `;
 
@@ -58,6 +61,10 @@ const Name = styled.a`
 
   @media ${({ theme }) => theme.breakpoints.xl} {
     font-size: 2.6rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    font-size: 2rem;
   }
 `;
 

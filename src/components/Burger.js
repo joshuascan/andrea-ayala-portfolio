@@ -17,10 +17,8 @@ export const StyledBurger = styled.button`
   div {
     width: 3.25rem;
     height: 0.35rem;
-    background: black;
-    border-radius: 10px;
-    transition: all 0.4s linear;
-    /* position: relative; */
+    background: ${(props) => (props.open ? "white" : "black")};
+    transition: transform 0.4s linear;
     transform-origin: 1px;
 
     :first-child {

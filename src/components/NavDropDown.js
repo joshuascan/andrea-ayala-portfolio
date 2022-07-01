@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import Link from "next/link";
 import Burger from "./Burger";
 
 export const MenuContainer = styled.div`
   display: none;
-  z-index: 1;
+  margin-top: 1rem;
+  z-index: 100;
 
   @media ${({ theme }) => theme.breakpoints.md} {
     display: block;
@@ -13,37 +15,41 @@ export const MenuContainer = styled.div`
 `;
 
 export const NavWrapper = styled.div`
-  border: 1px solid orange;
   display: ${(props) => (props.open ? "flex" : "none")};
   height: 100vh;
   width: 100vw;
   position: absolute;
   top: 0;
-  overflow: hidden;
+  left: 0;
   flex-direction: column;
   justify-content: center;
-  background-color: white;
-  opacity: ${(props) => (props.open ? "1" : "0")};
-  transition: all 0.4s ease-in-out;
+  background-color: black;
+  z-index: 10;
 `;
 
-export const LinkContainer = styled.ul`
+export const NavContainer = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
 export const NavLink = styled.a`
-  font-size: 2.8rem;
-  font-family: ${({ theme }) => theme.fonts.bold};
-  margin: 2rem;
-  letter-spacing: 0.4rem;
-  color: ${({ theme }) => theme.colors.secondary};
-  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-family: ${({ theme }) => theme.fonts.montserrat};
+  margin: 1.8rem;
+  color: ${(props) =>
+    props.href == props.pathname
+      ? props.theme.colors.pink
+      : props.theme.colors.gray};
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    font-size: 1.4rem;
+  }
 `;
 
 export default function NavDropDown() {
   const [open, setOpen] = useState(false);
+  const router = useRouter();
 
   const toggleNav = () => {
     setOpen(!open);
@@ -68,26 +74,40 @@ export default function NavDropDown() {
       </MenuContainer>
 
       <NavWrapper open={open}>
-        <LinkContainer>
-          <Link href="#about" passHref>
-            <NavLink onClick={closeMenu}>About</NavLink>
+        <NavContainer>
+          <Link href="/" passHref>
+            <NavLink pathname={router.asPath}>HOME</NavLink>
           </Link>
-          <Link href="#projects" passHref>
-            <NavLink onClick={closeMenu}>Projects</NavLink>
+          <Link href="/production-art" passHref>
+            <NavLink pathname={router.asPath} onClick={closeMenu}>
+              PRODUCTION ART
+            </NavLink>
           </Link>
-          <Link href="#contact" passHref>
-            <NavLink onClick={closeMenu}>Contact</NavLink>
+          <Link href="/tatcha" passHref>
+            <NavLink pathname={router.asPath} onClick={closeMenu}>
+              TATCHA
+            </NavLink>
           </Link>
-          <Link href="/images/josh_scanlan_resume.pdf" passHref>
+          <Link href="/graphic-design" passHref>
+            <NavLink pathname={router.asPath} onClick={closeMenu}>
+              GRAPHIC DESIGN
+            </NavLink>
+          </Link>
+          <Link href="/fine-art" passHref>
+            <NavLink pathname={router.asPath} onClick={closeMenu}>
+              FINE ART
+            </NavLink>
+          </Link>
+          <Link href="/images/andrea-wilson-resume.pdf" passHref>
             <NavLink
               onClick={closeMenu}
               target="_blank"
               rel="noreferrer noopener"
             >
-              Resume
+              RESUME
             </NavLink>
           </Link>
-        </LinkContainer>
+        </NavContainer>
       </NavWrapper>
     </>
   );
