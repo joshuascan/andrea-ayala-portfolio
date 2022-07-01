@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
+import NavDropDown from "./NavDropDown";
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -15,6 +16,11 @@ const HeaderContainer = styled.header`
   @media ${({ theme }) => theme.breakpoints.lg} {
     flex-direction: column;
     justify-content: space-around;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    flex-direction: row;
+    border: 1px solid red;
   }
 `;
 
@@ -34,6 +40,11 @@ const TextContainer = styled.div`
     width: 40rem;
     text-align: center;
     margin: 1rem 0;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    text-align: left;
+    width: 33rem;
   }
 `;
 
@@ -74,6 +85,10 @@ const NavContainer = styled.nav`
   @media ${({ theme }) => theme.breakpoints.xl} {
     padding-right: 0.5rem;
   }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    display: none;
+  }
 `;
 
 const NavLink = styled.a`
@@ -112,6 +127,7 @@ export default function Header() {
         </Link>
         <Title>PRODUCTION ARTIST / GRAPHIC DESIGNER</Title>
       </TextContainer>
+      <NavDropDown />
       <NavContainer>
         <Link href="/" passHref>
           <NavLink>HOME</NavLink>

@@ -1,16 +1,11 @@
 import styled from "styled-components";
 
 export const StyledBurger = styled.button`
-  position: absolute;
-  top: 1.5rem;
-  right: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 2rem;
   height: 3.25rem;
   background: transparent;
-  border: none;
   cursor: pointer;
   padding: 0;
   z-index: 10;
@@ -22,10 +17,10 @@ export const StyledBurger = styled.button`
   div {
     width: 3.25rem;
     height: 0.35rem;
-    background: ${({ theme }) => theme.colors.secondary};
+    background: black;
     border-radius: 10px;
     transition: all 0.4s linear;
-    position: relative;
+    /* position: relative; */
     transform-origin: 1px;
 
     :first-child {
