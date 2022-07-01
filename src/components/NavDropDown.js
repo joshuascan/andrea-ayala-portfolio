@@ -34,7 +34,7 @@ export const NavContainer = styled.ul`
 `;
 
 export const NavLink = styled.a`
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   font-family: ${({ theme }) => theme.fonts.montserrat};
   margin: 1.8rem;
   color: ${(props) =>
@@ -43,7 +43,7 @@ export const NavLink = styled.a`
       : props.theme.colors.gray};
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 `;
 
