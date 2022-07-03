@@ -13,12 +13,13 @@ import { fineArt } from "../constants";
 const CarouselWrapper = styled(CarouselProvider)`
   margin: 2rem auto 0;
   display: flex;
-  width: 90rem;
+  max-width: 90rem;
+  width: 90%;
 `;
 
 const StyledSlider = styled(Slider)`
-  height: 900px;
-  width: 900px;
+  height: 90rem;
+  width: 90rem;
   margin: 0 auto;
 `;
 
@@ -31,13 +32,12 @@ const SlideContainer = styled.div`
 
 const Img = styled(Image)`
   margin: 0 auto;
+  height: 85rem;
+  width: auto;
 `;
 
 const TextContainer = styled.div`
   background-color: rgba(255, 255, 255, 0.5);
-  position: absolute;
-  left: 0;
-  top: 800px;
   width: 100%;
   height: 80px;
   padding: 1rem;
@@ -88,11 +88,7 @@ export default function Carousel() {
         {fineArt.map(({ title, description, image, id }) => (
           <Slide index={id} key={id}>
             <SlideContainer>
-              <Img
-                src={image}
-                alt={title}
-                style={{ height: "850px", width: "auto" }}
-              />
+              <Img src={image} alt={title} />
               <TextContainer>
                 <TitleText>{title}</TitleText>
                 <DescriptionText>{description}</DescriptionText>
