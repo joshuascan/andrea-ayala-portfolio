@@ -18,6 +18,19 @@ const ArtContainer = styled.div`
   justify-content: center;
   width: 100rem;
   margin: 8rem 0;
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    width: 65rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    max-width: 80vw;
+    margin: 4rem 0 0;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    max-width: 95vw;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -26,6 +39,16 @@ const ImageContainer = styled.div`
   height: 40rem;
   position: relative;
   background-color: black;
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    width: 26rem;
+    height: 26rem;
+  }
 `;
 
 const Img = styled(Image)`
