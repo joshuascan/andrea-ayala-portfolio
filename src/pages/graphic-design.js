@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import Image from "next/future/image";
 import { useState } from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
@@ -14,9 +14,9 @@ import Modal from "../components/Modal";
 
 const EditorialContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  width: 100rem;
+  align-items: center;
   margin-top: 3rem;
 `;
 
@@ -26,11 +26,26 @@ const EditorialImageContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  margin: 3rem 0 7rem 0;
+  margin: 3rem 0 7rem;
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    margin: 3rem 0 5rem;
+  }
 `;
 
 const Img = styled(Image)`
   cursor: pointer;
+  max-width: 95rem;
+  width: 90vw;
+  height: auto;
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    width: 85vw;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    width: 90vw;
+  }
 `;
 
 export default function GraphicDesign() {
@@ -69,8 +84,6 @@ export default function GraphicDesign() {
                 <Img
                   src={image}
                   alt={title}
-                  width={901}
-                  height={400}
                   onClick={() => openModal({ title, description, image, id })}
                 />
               </EditorialImageContainer>
@@ -92,8 +105,6 @@ export default function GraphicDesign() {
             <Img
               src={superkids.image}
               alt={superkids.title}
-              width={929}
-              height={648}
               onClick={() => openModal(superkids)}
             />
           </ImageContainer>
