@@ -1,103 +1,118 @@
-import styled, { css } from "styled-components";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-} from "pure-react-carousel";
-import "pure-react-carousel/dist/react-carousel.es.css";
+import styled from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import Image from "next/future/image";
 import { fineArt } from "../constants";
 
-const CarouselWrapper = styled(CarouselProvider)`
-  margin: 2rem auto 0;
+import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
+
+const StyledSwiper = styled(Swiper)`
+  margin-top: 2rem;
   display: flex;
   max-width: 90rem;
   width: 90%;
-`;
+  --swiper-navigation-color: rgba(0, 0, 0, 0.15);
+  --swiper-pagination-color: rgba(0, 0, 0, 0.6);
 
-const StyledSlider = styled(Slider)`
-  height: 90rem;
-  width: 90rem;
-  margin: 0 auto;
-`;
+  :hover {
+    .swiper-button-prev,
+    .swiper-button-next {
+      transition: color 0.3s ease-in-out;
 
-const SlideContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+      :hover {
+        color: rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    max-width: 50rem;
+    width: 100%;
+  }
 `;
 
 const Img = styled(Image)`
   margin: 0 auto;
   height: 85rem;
   width: auto;
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    height: 70rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    height: 60rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    width: 95%;
+    max-width: 43rem;
+    height: auto;
+  }
 `;
 
 const TextContainer = styled.div`
-  background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
-  height: 80px;
   padding: 1rem;
+  bottom: 0px;
+  margin-bottom: 1.4rem;
 `;
 
 const TitleText = styled.p`
   font-family: ${({ theme }) => theme.fonts.montserrat};
   font-size: 2rem;
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    font-size: 1.6rem;
+  }
 `;
 
 const DescriptionText = styled.p`
   font-family: ${({ theme }) => theme.fonts.montserrat};
   font-size: 1.4rem;
-`;
 
-const buttonStyles = css`
-  font-size: 8rem;
-  color: black;
-  opacity: 0.15;
-  background: none;
-  transition: opacity 0.3s ease-in-out;
-  height: fit-content;
-  margin: auto 0;
-
-  :hover {
-    opacity: 0.4;
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    font-size: 1.2rem;
   }
 `;
 
-const BackButton = styled(ButtonBack)`
-  ${buttonStyles}
-`;
+const SlideContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 
-const NextButton = styled(ButtonNext)`
-  ${buttonStyles}
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    height: 70vh;
+  }
 `;
 
 export default function Carousel() {
   return (
-    <CarouselWrapper
-      naturalSlideWidth={900}
-      naturalSlideHeight={900}
-      totalSlides={fineArt.length}
-      infinite={true}
+    <StyledSwiper
+      cssMode={true}
+      navigation={true}
+      rewind={true}
+      pagination={{
+        clickable: true,
+      }}
+      mousewheel={true}
+      keyboard={true}
+      modules={[Navigation, Pagination, Mousewheel, Keyboard]}
     >
-      <BackButton>&#10094;</BackButton>
-      <StyledSlider>
-        {fineArt.map(({ title, description, image, id }) => (
-          <Slide index={id} key={id}>
-            <SlideContainer>
-              <Img src={image} alt={title} />
-              <TextContainer>
-                <TitleText>{title}</TitleText>
-                <DescriptionText>{description}</DescriptionText>
-              </TextContainer>
-            </SlideContainer>
-          </Slide>
-        ))}
-      </StyledSlider>
-      <NextButton>&#10095;</NextButton>
-    </CarouselWrapper>
+      {fineArt.map(({ title, description, image, id }) => (
+        <SwiperSlide key={id}>
+          <SlideContainer>
+            <Img src={image} alt={title} />
+            <TextContainer>
+              <TitleText>{title}</TitleText>
+              <DescriptionText>{description}</DescriptionText>
+            </TextContainer>
+          </SlideContainer>
+        </SwiperSlide>
+      ))}
+    </StyledSwiper>
   );
 }
