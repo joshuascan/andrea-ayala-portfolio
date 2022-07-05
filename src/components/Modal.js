@@ -1,14 +1,11 @@
 import { useEffect } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import * as ReactModal from "react-modal";
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-} from "pure-react-carousel";
-import "pure-react-carousel/dist/react-carousel.es.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import Image from "next/future/image";
 
 ReactModal.setAppElement("#__next");
@@ -55,18 +52,6 @@ const CloseButton = styled.button`
   right: 50px;
 `;
 
-const CarouselWrapper = styled(CarouselProvider)`
-  margin: 2rem auto 0;
-  display: flex;
-  width: 135rem;
-`;
-
-const StyledSlider = styled(Slider)`
-  width: 1350px;
-  height: ${(props) => props.height};
-  margin: 0 auto;
-`;
-
 const SlideContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -77,26 +62,31 @@ const Img = styled(Image)`
   margin: 0 auto;
 `;
 
-const buttonStyles = css`
-  font-size: 8rem;
-  color: white;
-  opacity: 0.4;
-  background: none;
-  transition: opacity 0.3s ease-in-out;
-  height: fit-content;
-  margin: auto 0;
+const StyledSwiper = styled(Swiper)`
+  margin-top: 2rem;
+  display: flex;
+  width: 135rem;
+  --swiper-navigation-color: rgba(255, 255, 255, 0.4);
+  --swiper-pagination-color: rgba(255, 255, 255, 0.8);
+  --swiper-pagination-bullet-inactive-color: rgb(75, 75, 75);
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  padding-bottom: 4rem;
 
   :hover {
-    opacity: 0.15;
+    .swiper-button-prev,
+    .swiper-button-next {
+      transition: color 0.3s ease-in-out;
+
+      :hover {
+        color: rgba(255, 255, 255, 0.15);
+      }
+    }
   }
-`;
 
-const BackButton = styled(ButtonBack)`
-  ${buttonStyles}
-`;
-
-const NextButton = styled(ButtonNext)`
-  ${buttonStyles}
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    max-width: 50rem;
+    width: 100%;
+  }
 `;
 
 export default function Modal({
@@ -134,32 +124,33 @@ export default function Modal({
       )}
     >
       {isCarousel ? (
-        <CarouselWrapper
-          naturalSlideWidth={1350}
-          naturalSlideHeight={650}
-          totalSlides={data.length}
-          currentSlide={startingSlide}
-          infinite={true}
+        <StyledSwiper
+          cssMode={true}
+          navigation={true}
+          rewind={true}
+          pagination={{
+            clickable: true,
+          }}
+          mousewheel={true}
+          keyboard={true}
+          initialSlide={startingSlide}
+          modules={[Navigation, Pagination, Mousewheel, Keyboard]}
         >
-          <BackButton>&#10094;</BackButton>
-          <StyledSlider height={containerHeight}>
-            {data.map(({ title, description, image, id }) => (
-              <Slide index={id} key={id}>
-                <SlideContainer>
-                  <Img
-                    src={image}
-                    alt={title}
-                    style={{ height: imageHeight, width: "auto" }}
-                  />
-                  {description && (
-                    <DescriptionText>{description}</DescriptionText>
-                  )}
-                </SlideContainer>
-              </Slide>
-            ))}
-          </StyledSlider>
-          <NextButton>&#10095;</NextButton>
-        </CarouselWrapper>
+          {data.map(({ title, description, image, id }) => (
+            <SwiperSlide key={id}>
+              <SlideContainer>
+                <Img
+                  src={image}
+                  alt={title}
+                  style={{ height: imageHeight, width: "auto" }}
+                />
+                {description && (
+                  <DescriptionText>{description}</DescriptionText>
+                )}
+              </SlideContainer>
+            </SwiperSlide>
+          ))}
+        </StyledSwiper>
       ) : (
         <>
           <Image

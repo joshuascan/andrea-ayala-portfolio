@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -13,6 +13,19 @@ const StyledSwiper = styled(Swiper)`
   display: flex;
   max-width: 90rem;
   width: 90%;
+  --swiper-navigation-color: rgba(0, 0, 0, 0.15);
+  --swiper-pagination-color: rgba(0, 0, 0, 0.6);
+
+  :hover {
+    .swiper-button-prev,
+    .swiper-button-next {
+      transition: color 0.3s ease-in-out;
+
+      :hover {
+        color: rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
 
   @media ${({ theme }) => theme.breakpoints.sm} {
     max-width: 50rem;
