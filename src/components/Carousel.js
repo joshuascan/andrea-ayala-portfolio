@@ -9,40 +9,71 @@ import { fineArt } from "../constants";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
 const StyledSwiper = styled(Swiper)`
-  margin: 2rem auto 0;
+  margin-top: 2rem;
   display: flex;
   max-width: 90rem;
   width: 90%;
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    max-width: 50rem;
+    width: 100%;
+  }
 `;
 
 const Img = styled(Image)`
   margin: 0 auto;
   height: 85rem;
   width: auto;
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    height: 70rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    height: 60rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    width: 95%;
+    max-width: 43rem;
+    height: auto;
+  }
 `;
 
 const TextContainer = styled.div`
-  background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
-  height: 80px;
   padding: 1rem;
+  bottom: 0px;
+  margin-bottom: 1.4rem;
 `;
 
 const TitleText = styled.p`
   font-family: ${({ theme }) => theme.fonts.montserrat};
   font-size: 2rem;
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    font-size: 1.6rem;
+  }
 `;
 
 const DescriptionText = styled.p`
   font-family: ${({ theme }) => theme.fonts.montserrat};
   font-size: 1.4rem;
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    font-size: 1.2rem;
+  }
 `;
 
 const SlideContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    height: 70vh;
+  }
 `;
 
 export default function Carousel() {
@@ -51,11 +82,12 @@ export default function Carousel() {
       cssMode={true}
       navigation={true}
       rewind={true}
-      pagination={true}
+      pagination={{
+        clickable: true,
+      }}
       mousewheel={true}
       keyboard={true}
       modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-      className="mySwiper"
     >
       {fineArt.map(({ title, description, image, id }) => (
         <SwiperSlide key={id}>
