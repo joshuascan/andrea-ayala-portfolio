@@ -34,11 +34,12 @@ const OverlayStyle = styled.div`
 `;
 
 const DescriptionText = styled.p`
-  margin: 3rem auto 0;
+  margin: 0 auto;
   font-family: ${({ theme }) => theme.fonts.montserrat};
   font-size: 2rem;
   text-align: center;
   color: white;
+  width: 95%;
 
   @media ${({ theme }) => theme.breakpoints.sm} {
     font-size: 1.6rem;
@@ -64,16 +65,68 @@ const CloseButton = styled.button`
   }
 `;
 
+const StyledSwiper = styled(Swiper)`
+  border: 1px solid red;
+  margin-top: 2rem;
+  display: flex;
+  max-width: 155rem;
+  width: 95vw;
+
+  --swiper-navigation-color: rgba(255, 255, 255, 0.4);
+  --swiper-pagination-color: rgba(255, 255, 255, 0.8);
+  --swiper-pagination-bullet-inactive-color: rgb(75, 75, 75);
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  padding-bottom: 4rem;
+
+  :hover {
+    .swiper-button-prev,
+    .swiper-button-next {
+      transition: color 0.3s ease-in-out;
+
+      :hover {
+        color: rgba(255, 255, 255, 0.15);
+      }
+    }
+  }
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    padding-bottom: 3rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    width: 100vw;
+  }
+`;
+
 const SlideContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: 1px solid blue;
+  width: 100%;
 `;
 
 const productionArtStyles = css`
   margin: 0 auto;
-  height: 55rem;
-  width: auto;
+  margin-bottom: 2rem;
+  object-fit: contain;
+  max-height: 100%;
+  height: 65rem;
+  max-width: 95%;
+  border: 1px solid orange;
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    height: 55rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    height: 50rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    height: 30rem;
+    max-width: 85%;
+  }
 `;
 
 const tatchaStyles = css`
@@ -112,33 +165,6 @@ const Img = styled(Image)`
   @media ${({ theme }) => theme.breakpoints.sm} {
     height: auto;
     width: 95vw;
-  }
-`;
-
-const StyledSwiper = styled(Swiper)`
-  margin-top: 2rem;
-  display: flex;
-  width: 135rem;
-  --swiper-navigation-color: rgba(255, 255, 255, 0.4);
-  --swiper-pagination-color: rgba(255, 255, 255, 0.8);
-  --swiper-pagination-bullet-inactive-color: rgb(75, 75, 75);
-  --swiper-pagination-bullet-inactive-opacity: 1;
-  padding-bottom: 4rem;
-
-  :hover {
-    .swiper-button-prev,
-    .swiper-button-next {
-      transition: color 0.3s ease-in-out;
-
-      :hover {
-        color: rgba(255, 255, 255, 0.15);
-      }
-    }
-  }
-
-  @media ${({ theme }) => theme.breakpoints.sm} {
-    max-width: 50rem;
-    width: 100%;
   }
 `;
 
