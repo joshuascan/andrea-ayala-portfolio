@@ -37,7 +37,12 @@ const DescriptionText = styled.p`
   margin: 3rem auto 0;
   font-family: ${({ theme }) => theme.fonts.montserrat};
   font-size: 2rem;
+  text-align: center;
   color: white;
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    font-size: 1.6rem;
+  }
 `;
 
 const CloseButton = styled.button`
@@ -50,6 +55,17 @@ const CloseButton = styled.button`
   position: absolute;
   top: 35px;
   right: 50px;
+  z-index: 1000;
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    right: 20px;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    top: 20px;
+    right: 50%;
+    left: 50%;
+  }
 `;
 
 const SlideContainer = styled.div`
@@ -58,8 +74,36 @@ const SlideContainer = styled.div`
   justify-content: center;
 `;
 
-const Img = styled(Image)`
+const CarouselImage = styled(Image)`
   margin: 0 auto;
+`;
+
+const Img = styled(Image)`
+  max-width: ${({ title }) =>
+    title === "Hello Doll" || title === "Superkids" ? "2000px" : "1600px"};
+  height: ${({ title }) =>
+    title === "Hello Doll" || title === "Superkids" || title === "CD Redesign"
+      ? "85vh"
+      : "auto"};
+  width: ${({ title }) =>
+    title === "Hello Doll" || title === "Superkids" || title === "CD Redesign"
+      ? "auto"
+      : "90vw"};
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    height: ${({ title }) => (title === "Hello Doll" ? "85vh" : "auto")};
+    width: ${({ title }) => (title === "Hello Doll" ? "auto" : "90vw")};
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    height: auto;
+    width: ${({ title }) => (title === "Hello Doll" ? "85vw" : "95vw")};
+  }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    height: auto;
+    width: 95vw;
+  }
 `;
 
 const StyledSwiper = styled(Swiper)`
@@ -139,7 +183,7 @@ export default function Modal({
           {data.map(({ title, description, image, id }) => (
             <SwiperSlide key={id}>
               <SlideContainer>
-                <Img
+                <CarouselImage
                   src={image}
                   alt={title}
                   style={{ height: imageHeight, width: "auto" }}
@@ -153,15 +197,7 @@ export default function Modal({
         </StyledSwiper>
       ) : (
         <>
-          <Image
-            src={data.image}
-            alt={data.description}
-            style={
-              data.title === "Hello Doll"
-                ? { height: "85vh", width: "auto" }
-                : { width: "80vw", maxWidth: "1600px", height: "auto" }
-            }
-          />
+          <Img src={data.image} alt={data.description} title={data.title} />
           <DescriptionText>{data.description}</DescriptionText>
         </>
       )}
