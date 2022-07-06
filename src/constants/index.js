@@ -91,18 +91,22 @@ export const productionArt = [
 
 export const tatchaArt = [
   {
+    title: "Tatcha 1",
     image: "/images/tatcha/Tatcha-1.jpg",
     id: 0,
   },
   {
+    title: "Tatcha 2",
     image: "/images/tatcha/Tatcha-2.png",
     id: 1,
   },
   {
+    title: "Tatcha 3",
     image: "/images/tatcha/Tatcha-3.png",
     id: 2,
   },
   {
+    title: "Tatcha 4",
     image: "/images/tatcha/Tatcha-4.png",
     id: 3,
   },

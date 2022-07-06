@@ -84,8 +84,6 @@ export default function Tatcha() {
           setIsOpen={setIsOpen}
           data={data}
           startingSlide={startingSlide}
-          imageHeight="90rem"
-          containerHeight="90rem"
         />
         <Section>
           <SectionTitle>TATCHA</SectionTitle>

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import * as ReactModal from "react-modal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
@@ -70,8 +70,21 @@ const SlideContainer = styled.div`
   justify-content: center;
 `;
 
-const CarouselImage = styled(Image)`
+const productionArtStyles = css`
   margin: 0 auto;
+  height: 55rem;
+  width: auto;
+`;
+
+const tatchaStyles = css`
+  margin: 0 auto;
+  height: 90rem;
+  width: auto;
+`;
+
+const CarouselImage = styled(Image)`
+  ${({ title }) =>
+    title.includes("Tatcha") === true ? tatchaStyles : productionArtStyles}
 `;
 
 const Img = styled(Image)`
@@ -135,8 +148,6 @@ export default function Modal({
   data,
   isCarousel,
   startingSlide,
-  imageHeight,
-  containerHeight,
 }) {
   useEffect(() => {
     if (isOpen) {
@@ -179,11 +190,7 @@ export default function Modal({
           {data.map(({ title, description, image, id }) => (
             <SwiperSlide key={id}>
               <SlideContainer>
-                <CarouselImage
-                  src={image}
-                  alt={title}
-                  style={{ height: imageHeight, width: "auto" }}
-                />
+                <CarouselImage src={image} alt={title} title={title} />
                 {description && (
                   <DescriptionText>{description}</DescriptionText>
                 )}
