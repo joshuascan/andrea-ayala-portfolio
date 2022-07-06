@@ -66,7 +66,6 @@ const CloseButton = styled.button`
 `;
 
 const StyledSwiper = styled(Swiper)`
-  border: 1px solid red;
   margin-top: 2rem;
   display: flex;
   max-width: 155rem;
@@ -89,10 +88,6 @@ const StyledSwiper = styled(Swiper)`
     }
   }
 
-  @media ${({ theme }) => theme.breakpoints.lg} {
-    padding-bottom: 3rem;
-  }
-
   @media ${({ theme }) => theme.breakpoints.sm} {
     width: 100vw;
   }
@@ -102,7 +97,6 @@ const SlideContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid blue;
   width: 100%;
 `;
 
@@ -113,7 +107,6 @@ const productionArtStyles = css`
   max-height: 100%;
   height: 65rem;
   max-width: 95%;
-  border: 1px solid orange;
 
   @media ${({ theme }) => theme.breakpoints.lg} {
     height: 55rem;
@@ -131,8 +124,20 @@ const productionArtStyles = css`
 
 const tatchaStyles = css`
   margin: 0 auto;
+  margin-bottom: 1rem;
   height: 90rem;
-  width: auto;
+  max-width: 85%;
+  object-fit: contain;
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    height: 77rem;
+    margin-bottom: 0;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    height: 50rem;
+    max-width: 78%;
+  }
 `;
 
 const CarouselImage = styled(Image)`
