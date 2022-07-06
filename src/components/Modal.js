@@ -109,16 +109,18 @@ const productionArtStyles = css`
   max-width: 95%;
 
   @media ${({ theme }) => theme.breakpoints.lg} {
-    height: 55rem;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.md} {
     height: 50rem;
+    margin-top: 10rem;
   }
 
   @media ${({ theme }) => theme.breakpoints.md} {
-    height: 30rem;
-    max-width: 85%;
+    height: 40rem;
+    max-width: 90%;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    height: 20rem;
+    max-width: 80%;
   }
 `;
 
