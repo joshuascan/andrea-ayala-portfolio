@@ -58,10 +58,6 @@ const CloseButton = styled.button`
   z-index: 1000;
 
   @media ${({ theme }) => theme.breakpoints.md} {
-    right: 20px;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.sm} {
     top: 20px;
     right: 50%;
     left: 50%;
@@ -80,7 +76,7 @@ const CarouselImage = styled(Image)`
 
 const Img = styled(Image)`
   max-width: ${({ title }) =>
-    title === "Hello Doll" || title === "Superkids" ? "2000px" : "1600px"};
+    title === "Hello Doll" || title === "Superkids" ? "2000px" : "1800px"};
   height: ${({ title }) =>
     title === "Hello Doll" || title === "Superkids" || title === "CD Redesign"
       ? "85vh"
