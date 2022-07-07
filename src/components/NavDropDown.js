@@ -35,6 +35,7 @@ export const NavContainer = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 10rem;
 `;
 
 export const NavLink = styled.a`
