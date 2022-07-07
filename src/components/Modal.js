@@ -127,6 +127,7 @@ const productionArtStyles = css`
 const tatchaStyles = css`
   margin: 0 auto;
   margin-bottom: 1rem;
+  max-height: 85vh;
   height: 90rem;
   max-width: 85%;
   object-fit: contain;
