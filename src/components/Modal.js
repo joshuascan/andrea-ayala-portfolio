@@ -54,7 +54,7 @@ const CloseButton = styled.button`
   padding: 0;
   cursor: pointer;
   position: absolute;
-  top: 35px;
+  top: 20px;
   right: 50px;
   z-index: 1000;
 
@@ -151,11 +151,10 @@ const CarouselImage = styled(Image)`
 const Img = styled(Image)`
   margin-bottom: 4rem;
   max-width: ${({ title }) =>
-    title === "Hello Doll" || title === "Superkids" ? "2000px" : "1800px"};
+    title === "Hello Doll" || title === "Superkids" ? "2000px" : "90vw"};
+  max-height: 85vh;
   height: ${({ title }) =>
-    title === "Hello Doll" || title === "Superkids" || title === "CD Redesign"
-      ? "85vh"
-      : "auto"};
+    title === "Hello Doll" || title === "Superkids" ? "85vh" : "auto"};
   width: ${({ title }) =>
     title === "Hello Doll" || title === "Superkids" || title === "CD Redesign"
       ? "auto"
