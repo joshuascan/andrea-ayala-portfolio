@@ -1,23 +1,74 @@
 import Head from "next/head";
 import Link from "next/link";
 import styled from "styled-components";
+import Header from "../components/Header";
+
+const HeaderWrapper = styled.div`
+  display: none;
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    display: block;
+    width: 90vw;
+  }
+`;
 
 const HomeContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 1274px;
 `;
 
 const HomeContent = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 12rem;
-  margin-right: 7rem;
+  margin: 12rem 0;
   justify-content: center;
   align-items: flex-end;
   position: relative;
   height: 1073px;
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    margin: 8rem 0;
+    height: 950px;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    width: 90vw;
+    height: 80vh;
+    align-items: center;
+    margin: 4rem 0;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    width: 90vw;
+    height: 100vw;
+  }
+`;
+
+const PinkRectangle = styled.div`
+  height: 100%;
+  width: 1181px;
+  background-color: ${({ theme }) => theme.colors.pink};
+  position: absolute;
+  right: 630px;
+  z-index: -1;
+
+  @media screen and (max-width: 1462px) {
+    right: 545px;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    right: 435px;
+    width: 100%;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    right: 326px;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    right: 0;
+  }
 `;
 
 const HeroText = styled.h1`
@@ -26,24 +77,47 @@ const HeroText = styled.h1`
   color: ${({ theme }) => theme.colors.pink};
   text-align: right;
   line-height: 1.5;
+
+  @media screen and (max-width: 1462px) {
+    font-size: 8.3rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    font-size: 6.8rem;
+    letter-spacing: 0;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    font-size: 5.1rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    font-size: 6.8rem;
+    color: white;
+    text-align: left;
+    margin-left: 1.5rem;
+    max-width: 65rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    font-size: 3.8rem;
+    margin: 0 auto;
+    max-width: 33rem;
+    padding-left: 1rem;
+  }
 `;
 
 const WhiteText = styled.span`
   color: white;
 `;
 
-const PinkRectangle = styled.div`
-  height: 1073px;
-  width: 1181px;
-  background-color: ${({ theme }) => theme.colors.pink};
-  position: absolute;
-  left: -350px;
-  z-index: -1;
-`;
-
 const HeaderTop = styled.div`
   margin-top: 12rem;
   margin-bottom: -7.5rem;
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    margin: 0;
+  }
 `;
 
 const HeaderBottom = styled.div`
@@ -51,6 +125,28 @@ const HeaderBottom = styled.div`
   justify-content: space-between;
   width: 1200px;
   margin-right: 2.8rem;
+
+  @media screen and (max-width: 1462px) {
+    width: 1044px;
+    margin-right: 2.2rem;
+    margin-top: 1rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    width: 837px;
+    margin-right: 1.6rem;
+    margin-top: 2.5rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    width: 628px;
+    margin-right: 1.1rem;
+    margin-top: 4rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    display: none;
+  }
 `;
 
 const SubHeader = styled.h2`
@@ -58,7 +154,14 @@ const SubHeader = styled.h2`
   font-size: 1.8rem;
   letter-spacing: 0.1rem;
   color: white;
-  font-weight: 400;
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    font-size: 1.6rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    font-size: 1.2rem;
+  }
 `;
 
 const LinkContainer = styled.nav`
@@ -78,6 +181,14 @@ const NavLink = styled.a`
   :hover {
     color: ${({ theme }) => theme.colors.pink};
   }
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    font-size: 1.1rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    letter-spacing: 0;
+  }
 `;
 
 export default function Home() {
@@ -90,6 +201,9 @@ export default function Home() {
       </Head>
 
       <HomeContainer>
+        <HeaderWrapper>
+          <Header />
+        </HeaderWrapper>
         <HomeContent>
           <PinkRectangle />
           <HeaderTop>
