@@ -125,7 +125,6 @@ const HeaderBottom = styled.div`
   justify-content: space-between;
   width: 1200px;
   margin-right: 2.8rem;
-  /* border: 1px solid orange; */
 
   @media screen and (max-width: 1462px) {
     width: 1044px;
