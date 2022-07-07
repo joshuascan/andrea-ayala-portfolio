@@ -59,8 +59,8 @@ const CloseButton = styled.button`
   z-index: 1000;
 
   @media ${({ theme }) => theme.breakpoints.md} {
-    top: 100px;
-    right: 45vw;
+    top: 3vh;
+    right: 8vw;
     font-size: 4rem;
   }
 `;
