@@ -6,24 +6,26 @@ const HomeContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 1274px;
 `;
 
 const HomeContent = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 12rem;
-  /* margin-right: 7rem; */
+  margin: 12rem 0;
   justify-content: center;
   align-items: flex-end;
   position: relative;
   height: 1073px;
-  border: 1px solid red;
-  width: 100vw;
+  border: 1px solid blue;
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    margin: 8rem 0;
+    height: 950px;
+  }
 `;
 
 const PinkRectangle = styled.div`
-  height: 1073px;
+  height: 100%;
   width: 1181px;
   background-color: ${({ theme }) => theme.colors.pink};
   position: absolute;
@@ -35,7 +37,12 @@ const PinkRectangle = styled.div`
   }
 
   @media ${({ theme }) => theme.breakpoints.xl} {
-    right: 430px;
+    right: 435px;
+    width: 100%;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    right: 326px;
   }
 `;
 
@@ -54,6 +61,10 @@ const HeroText = styled.h1`
     font-size: 6.8rem;
     letter-spacing: 0;
   }
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    font-size: 5.1rem;
+  }
 `;
 
 const WhiteText = styled.span`
@@ -63,8 +74,6 @@ const WhiteText = styled.span`
 const HeaderTop = styled.div`
   margin-top: 12rem;
   margin-bottom: -7.5rem;
-  max-width: 1462px;
-  width: 100vw;
 `;
 
 const HeaderBottom = styled.div`
@@ -75,9 +84,21 @@ const HeaderBottom = styled.div`
   /* border: 1px solid orange; */
 
   @media screen and (max-width: 1462px) {
-    width: 1045px;
+    width: 1044px;
     margin-right: 2.2rem;
     margin-top: 1rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    width: 837px;
+    margin-right: 1.6rem;
+    margin-top: 2.5rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    width: 628px;
+    margin-right: 1.1rem;
+    margin-top: 4rem;
   }
 `;
 
@@ -86,6 +107,14 @@ const SubHeader = styled.h2`
   font-size: 1.8rem;
   letter-spacing: 0.1rem;
   color: white;
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    font-size: 1.6rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.lg} {
+    font-size: 1.2rem;
+  }
 `;
 
 const LinkContainer = styled.nav`
@@ -104,6 +133,10 @@ const NavLink = styled.a`
 
   :hover {
     color: ${({ theme }) => theme.colors.pink};
+  }
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    font-size: 1.1rem;
   }
 `;
 
