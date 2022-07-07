@@ -149,6 +149,7 @@ const CarouselImage = styled(Image)`
 `;
 
 const Img = styled(Image)`
+  margin-bottom: 4rem;
   max-width: ${({ title }) =>
     title === "Hello Doll" || title === "Superkids" ? "2000px" : "1800px"};
   height: ${({ title }) =>
@@ -166,12 +167,13 @@ const Img = styled(Image)`
   }
 
   @media ${({ theme }) => theme.breakpoints.md} {
+    margin-bottom: 3rem;
     height: auto;
     width: ${({ title }) => (title === "Hello Doll" ? "85vw" : "95vw")};
   }
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    height: auto;
+    margin-bottom: 2rem;
     width: 95vw;
   }
 `;
