@@ -17,6 +17,7 @@ const ArtContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  max-width: 1300px;
   margin: 5rem 0;
 
   @media ${({ theme }) => theme.breakpoints.md} {
