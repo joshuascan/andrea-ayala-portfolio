@@ -10,6 +10,10 @@ const HeaderWrapper = styled.div`
     display: block;
     width: 90vw;
   }
+
+  @media ${({ theme }) => theme.breakpoints.sm} {
+    width: 95vw;
+  }
 `;
 
 const HomeContainer = styled.main`
@@ -42,6 +46,7 @@ const HomeContent = styled.div`
   @media ${({ theme }) => theme.breakpoints.sm} {
     width: 90vw;
     height: 100vw;
+    margin: 6rem 0;
   }
 `;
 

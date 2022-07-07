@@ -15,15 +15,19 @@ export const MenuContainer = styled.div`
 `;
 
 export const NavWrapper = styled.div`
-  display: ${(props) => (props.open ? "flex" : "none")};
+  display: flex;
   height: 100vh;
+  visibility: ${(props) => (props.open ? "visible" : "hidden")};
   width: 100vw;
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   flex-direction: column;
   justify-content: center;
   background-color: black;
+  opacity: ${(props) => (props.open ? 1 : 0.1)};
+  transition: all 0.2s ease-in-out;
   z-index: 10;
 `;
 
