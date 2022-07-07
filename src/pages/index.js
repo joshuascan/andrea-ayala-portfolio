@@ -13,11 +13,30 @@ const HomeContent = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 12rem;
-  margin-right: 7rem;
+  /* margin-right: 7rem; */
   justify-content: center;
   align-items: flex-end;
   position: relative;
   height: 1073px;
+  border: 1px solid red;
+  width: 100vw;
+`;
+
+const PinkRectangle = styled.div`
+  height: 1073px;
+  width: 1181px;
+  background-color: ${({ theme }) => theme.colors.pink};
+  position: absolute;
+  right: 630px;
+  z-index: -1;
+
+  @media screen and (max-width: 1462px) {
+    right: 545px;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    right: 430px;
+  }
 `;
 
 const HeroText = styled.h1`
@@ -26,24 +45,26 @@ const HeroText = styled.h1`
   color: ${({ theme }) => theme.colors.pink};
   text-align: right;
   line-height: 1.5;
+
+  @media screen and (max-width: 1462px) {
+    font-size: 8.3rem;
+  }
+
+  @media ${({ theme }) => theme.breakpoints.xl} {
+    font-size: 6.8rem;
+    letter-spacing: 0;
+  }
 `;
 
 const WhiteText = styled.span`
   color: white;
 `;
 
-const PinkRectangle = styled.div`
-  height: 1073px;
-  width: 1181px;
-  background-color: ${({ theme }) => theme.colors.pink};
-  position: absolute;
-  left: -350px;
-  z-index: -1;
-`;
-
 const HeaderTop = styled.div`
   margin-top: 12rem;
   margin-bottom: -7.5rem;
+  max-width: 1462px;
+  width: 100vw;
 `;
 
 const HeaderBottom = styled.div`
@@ -51,6 +72,13 @@ const HeaderBottom = styled.div`
   justify-content: space-between;
   width: 1200px;
   margin-right: 2.8rem;
+  /* border: 1px solid orange; */
+
+  @media screen and (max-width: 1462px) {
+    width: 1045px;
+    margin-right: 2.2rem;
+    margin-top: 1rem;
+  }
 `;
 
 const SubHeader = styled.h2`
@@ -58,7 +86,6 @@ const SubHeader = styled.h2`
   font-size: 1.8rem;
   letter-spacing: 0.1rem;
   color: white;
-  font-weight: 400;
 `;
 
 const LinkContainer = styled.nav`
