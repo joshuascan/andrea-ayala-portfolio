@@ -65,7 +65,7 @@ export default function ProductionArt() {
       <HeadSeo
         title={"PRODUCTION ART"}
         description={
-          "As a production artist I have preflighted, proofed, and prepared print ready art files. Here is a selection of labels that I've worked to produce."
+          "As a Production Artist, I have preflighted, proofed, and prepared print ready art files, specializing in labels for wine, food, cosmetics and cannabis products."
         }
         canonicalUrl={`${siteMetadata.siteUrl}/production-art`}
         ogType={"website"}
