@@ -77,12 +77,21 @@ const StyledSwiper = styled(Swiper)`
   --swiper-pagination-bullet-inactive-opacity: 1;
   padding-bottom: 4rem;
 
-  :hover {
+  @media not ${({ theme }) => theme.breakpoints.md} {
     .swiper-button-prev,
     .swiper-button-next {
       transition: color 0.3s ease-in-out;
 
       :hover {
+        color: rgba(255, 255, 255, 0.15);
+      }
+    }
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    .swiper-button-prev,
+    .swiper-button-next {
+      :active {
         color: rgba(255, 255, 255, 0.15);
       }
     }

@@ -16,12 +16,21 @@ const StyledSwiper = styled(Swiper)`
   --swiper-navigation-color: rgba(0, 0, 0, 0.15);
   --swiper-pagination-color: rgba(0, 0, 0, 0.6);
 
-  :hover {
+  @media not ${({ theme }) => theme.breakpoints.md} {
     .swiper-button-prev,
     .swiper-button-next {
       transition: color 0.3s ease-in-out;
 
       :hover {
+        color: rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    .swiper-button-prev,
+    .swiper-button-next {
+      :active {
         color: rgba(0, 0, 0, 0.4);
       }
     }

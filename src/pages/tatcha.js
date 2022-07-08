@@ -24,12 +24,8 @@ const ArtContainer = styled.div`
   }
 
   @media ${({ theme }) => theme.breakpoints.md} {
-    max-width: 80vw;
-    margin: 4rem 0 0;
-  }
-
-  @media ${({ theme }) => theme.breakpoints.md} {
     max-width: 95vw;
+    margin: 4rem 0 0;
   }
 `;
 
@@ -52,9 +48,18 @@ const ImageContainer = styled.div`
 `;
 
 const Img = styled(Image)`
-  :hover {
-    opacity: 0.75;
-    cursor: pointer;
+  cursor: pointer;
+
+  @media not ${({ theme }) => theme.breakpoints.md} {
+    :hover {
+      opacity: 0.75;
+    }
+  }
+
+  @media ${({ theme }) => theme.breakpoints.md} {
+    :active {
+      opacity: 0.75;
+    }
   }
 `;
 
