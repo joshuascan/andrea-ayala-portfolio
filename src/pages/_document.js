@@ -32,6 +32,8 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <meta charSet="utf-8" />
+          <link rel="icon" href="/favicon.ico" />
           <link
             rel="preload"
             href="/fonts/brandongrotesque-black-webfont.woff"
