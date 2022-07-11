@@ -157,8 +157,8 @@ const HeaderBottom = styled.div`
 
 const SubHeader = styled.h2`
   font-family: ${({ theme }) => theme.fonts.futuraBook};
-  font-size: 1.8rem;
-  letter-spacing: 0.1rem;
+  font-size: 1.7rem;
+  letter-spacing: 0.15rem;
   color: white;
 
   @media ${({ theme }) => theme.breakpoints.xl} {
