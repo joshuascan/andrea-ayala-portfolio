@@ -77,7 +77,8 @@ const Title = styled.p`
   margin-right: -0.4rem;
 
   @media ${({ theme }) => theme.breakpoints.xl} {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-top: 0.6rem;
   }
 
   @media ${({ theme }) => theme.breakpoints.sm} {
