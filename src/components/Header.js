@@ -82,6 +82,7 @@ const Title = styled.p`
 
   @media ${({ theme }) => theme.breakpoints.sm} {
     margin-top: 0.4rem;
+    letter-spacing: 0.15rem;
     font-size: 0.8rem;
   }
 `;
@@ -135,7 +136,7 @@ export default function Header() {
     <HeaderContainer>
       <TextContainer>
         <Link href="/" passHref>
-          <Name>ANDREA WILSON</Name>
+          <Name>ANDREA AYALA</Name>
         </Link>
         <Title>PRODUCTION ARTIST / GRAPHIC DESIGNER</Title>
       </TextContainer>
