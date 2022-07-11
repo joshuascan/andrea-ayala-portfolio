@@ -36,13 +36,14 @@ const OverlayStyle = styled.div`
 const DescriptionText = styled.p`
   margin: 0 auto;
   font-family: ${({ theme }) => theme.fonts.montserrat};
-  font-size: 2rem;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
   text-align: center;
   color: white;
   width: 95%;
 
   @media ${({ theme }) => theme.breakpoints.sm} {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 `;
 

@@ -71,19 +71,23 @@ const TextContainer = styled.div`
 
 const TitleText = styled.p`
   font-family: ${({ theme }) => theme.fonts.montserrat};
-  font-size: 2rem;
+  font-size: 1.8rem;
+  letter-spacing: 0.15rem;
 
   @media ${({ theme }) => theme.breakpoints.sm} {
     font-size: 1.6rem;
+    letter-spacing: 0.1rem;
   }
 `;
 
 const DescriptionText = styled.p`
   font-family: ${({ theme }) => theme.fonts.montserrat};
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.15rem;
 
   @media ${({ theme }) => theme.breakpoints.sm} {
     font-size: 1.2rem;
+    letter-spacing: 0.1rem;
   }
 `;
 

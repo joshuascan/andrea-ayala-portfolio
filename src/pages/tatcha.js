@@ -35,7 +35,6 @@ const ImageContainer = styled.div`
   width: 40rem;
   height: 40rem;
   position: relative;
-  background-color: black;
 
   @media ${({ theme }) => theme.breakpoints.lg} {
     width: 30rem;
@@ -50,18 +49,6 @@ const ImageContainer = styled.div`
 
 const Img = styled(Image)`
   cursor: pointer;
-
-  @media not ${({ theme }) => theme.breakpoints.md} {
-    :hover {
-      opacity: 0.75;
-    }
-  }
-
-  @media ${({ theme }) => theme.breakpoints.md} {
-    :active {
-      opacity: 0.75;
-    }
-  }
 `;
 
 export default function Tatcha() {
