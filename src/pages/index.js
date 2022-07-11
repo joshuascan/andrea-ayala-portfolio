@@ -173,7 +173,6 @@ const SubHeader = styled.h2`
 const LinkContainer = styled.nav`
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
 `;
 
 const NavLink = styled.a`
