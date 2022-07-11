@@ -129,7 +129,7 @@ const HeaderTop = styled.div`
 const HeaderBottom = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 1115px;
+  width: 1113px;
   padding-right: 2.2rem;
 
   @media screen and (max-width: 1462px) {
