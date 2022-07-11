@@ -28,7 +28,7 @@ const HomeContent = styled.div`
   flex-direction: column;
   margin: 12rem 0;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
   height: 1073px;
 
@@ -56,20 +56,20 @@ const PinkRectangle = styled.div`
   width: 1181px;
   background-color: ${({ theme }) => theme.colors.pink};
   position: absolute;
-  right: 630px;
+  right: 660px;
   z-index: -1;
 
   @media screen and (max-width: 1462px) {
-    right: 545px;
+    right: 573px;
   }
 
   @media ${({ theme }) => theme.breakpoints.xl} {
-    right: 435px;
+    right: 457px;
     width: 100%;
   }
 
   @media ${({ theme }) => theme.breakpoints.lg} {
-    right: 326px;
+    right: 342px;
   }
 
   @media ${({ theme }) => theme.breakpoints.md} {
@@ -81,7 +81,7 @@ const HeroText = styled.h1`
   font-size: 9.6rem;
   font-family: ${({ theme }) => theme.fonts.luloBold};
   color: ${({ theme }) => theme.colors.pink};
-  text-align: right;
+  text-align: center;
   line-height: 1.5;
 
   @media screen and (max-width: 1462px) {
@@ -129,24 +129,24 @@ const HeaderTop = styled.div`
 const HeaderBottom = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 1200px;
-  margin-right: 2.8rem;
+  width: 1115px;
+  padding-right: 2.2rem;
 
   @media screen and (max-width: 1462px) {
-    width: 1044px;
-    margin-right: 2.2rem;
+    width: 967px;
+    padding-right: 2rem;
     margin-top: 1rem;
   }
 
   @media ${({ theme }) => theme.breakpoints.xl} {
-    width: 837px;
-    margin-right: 1.6rem;
+    width: 773px;
+    padding-right: 1.5rem;
     margin-top: 2.5rem;
   }
 
   @media ${({ theme }) => theme.breakpoints.lg} {
-    width: 628px;
-    margin-right: 1.1rem;
+    width: 579px;
+    padding-right: 1rem;
     margin-top: 4rem;
   }
 
@@ -203,7 +203,7 @@ export default function Home() {
       <HeadSeo
         title={"HOME"}
         description={
-          "Andrea Wilson is a production artist and graphic designer."
+          "Andrea Ayala is a production artist and graphic designer."
         }
         canonicalUrl={siteMetadata.siteUrl}
         ogType={"website"}
@@ -219,7 +219,7 @@ export default function Home() {
             <HeroText>
               <WhiteText>HELLO, MY</WhiteText> NAME IS
               <br />
-              <WhiteText>ANDREA</WhiteText> WILSON
+              <WhiteText>ANDREA</WhiteText> AYALA
             </HeroText>
           </HeaderTop>
           <HeaderBottom>
