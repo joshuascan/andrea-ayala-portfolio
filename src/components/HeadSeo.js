@@ -4,7 +4,7 @@ import siteMetadata from "../data/siteMetadata";
 export default function HeadSeo({ title, description, canonicalUrl, ogType }) {
   return (
     <Head>
-      <title>{`${title} | ANDREA WILSON`}</title>
+      <title>{`${title} | ANDREA AYALA`}</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
