@@ -30,7 +30,6 @@ const HeaderContainer = styled.header`
 const TextContainer = styled.div`
   width: 35rem;
   margin-left: 16.5rem;
-  /* border: 1px solid red; */
 
   @media screen and (max-width: 1360px) {
     margin-left: 12rem;
@@ -38,7 +37,6 @@ const TextContainer = styled.div`
 
   @media ${({ theme }) => theme.breakpoints.xl} {
     width: 30rem;
-    /* margin-left: 5rem; */
     margin-left: 5.1%;
   }
 
