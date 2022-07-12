@@ -28,15 +28,18 @@ const HeaderContainer = styled.header`
 `;
 
 const TextContainer = styled.div`
-  text-align: right;
-  width: 49.5rem;
+  width: 35rem;
+  margin-left: 16.5rem;
+  /* border: 1px solid red; */
 
   @media screen and (max-width: 1360px) {
-    width: 45rem;
+    margin-left: 12rem;
   }
 
   @media ${({ theme }) => theme.breakpoints.xl} {
-    width: 34%;
+    width: 30rem;
+    /* margin-left: 5rem; */
+    margin-left: 5.1%;
   }
 
   @media ${({ theme }) => theme.breakpoints.lg} {
