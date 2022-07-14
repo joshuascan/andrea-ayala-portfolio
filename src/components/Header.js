@@ -159,7 +159,7 @@ export default function Header() {
         <Link href="/fine-art" passHref>
           <NavLink pathname={router.asPath}>FINE ART</NavLink>
         </Link>
-        <Link href="/images/andrea-wilson-resume.pdf" passHref>
+        <Link href="/images/andrea-ayala-resume.pdf" passHref>
           <NavLink target="_blank" rel="noreferrer noopener">
             RESUME
           </NavLink>
