@@ -32,7 +32,7 @@ export default function Footer() {
   return (
     <FooterContainer>
       <FooterText>
-        <Link href="https://www.linkedin.com/in/andrea-wilson7/" passHref>
+        <Link href="https://www.linkedin.com/in/andrea-ayala7/" passHref>
           <FooterLink target="_blank" rel="noreferrer noopener">
             LinkedIn
           </FooterLink>
