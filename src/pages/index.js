@@ -239,7 +239,7 @@ export default function Home() {
               <Link href="/fine-art" passHref>
                 <NavLink>FINE ART</NavLink>
               </Link>
-              <Link href="/images/andrea-ayala-resume-2023.pdf" passHref>
+              <Link href="/images/andrea-ayala-resume-v2.pdf" passHref>
                 <NavLink target="_blank" rel="noreferrer noopener">
                   RESUME
                 </NavLink>

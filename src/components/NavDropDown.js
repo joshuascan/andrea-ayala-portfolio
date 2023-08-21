@@ -103,7 +103,7 @@ export default function NavDropDown() {
               FINE ART
             </NavLink>
           </Link>
-          <Link href="/images/andrea-ayala-resume-2023.pdf" passHref>
+          <Link href="/images/andrea-ayala-resume-v2.pdf" passHref>
             <NavLink
               onClick={closeMenu}
               target="_blank"
