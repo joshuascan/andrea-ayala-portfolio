@@ -2,7 +2,7 @@
 
 Built using Next.js and Styled Components.
 
-The deployed site can be found [here](https://andreaayala.me/).
+The deployed site can be found [here](https://andrea-ayala-portfolio.vercel.app/).
 
 To run locally:
 
